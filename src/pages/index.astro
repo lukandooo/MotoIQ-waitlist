@@ -1,0 +1,665 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="MotoIQ — Fair Price & Deal Score dla handlarzy aut" description="Znajdź niedoszacowane auta na OLX i Otomoto zanim zrobi to konkurencja. Dla komisów, fliperów i importerów. Closed beta — szukam 15 osób.">
+  <main class="page">
+    <!-- Top status bar -->
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <circle cx="11" cy="11" r="9.5" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M11 4 L11 11 L16 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand-name">MotoIQ</span>
+      </div>
+      <div class="status mono">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>CLOSED BETA · 15 MIEJSC</span>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-meta label">
+        <span>/ 01</span>
+        <span>EARLY ACCESS · PL</span>
+        <span class="hero-meta-line" aria-hidden="true"></span>
+        <span>DACH · SK · UK WKRÓTCE</span>
+      </div>
+
+      <h1 class="headline">
+        Znajdź niedoszacowane<br/>
+        auta <em>zanim</em><br/>
+        zrobi to konkurencja.
+      </h1>
+
+      <p class="lede">
+        MotoIQ skanuje OLX i Otomoto w czasie rzeczywistym, liczy
+        <span class="hl">Fair Price</span> dla każdej oferty i pokazuje
+        <span class="hl">Deal Score</span> — od razu widzisz, ile naprawdę
+        kosztuje auto i o ile rynek je przepłaca lub przecenia.
+      </p>
+    </section>
+
+    <!-- Value props strip — full width -->
+    <ul class="values mono" aria-label="Co dostajesz">
+      <li>
+        <span class="values-num">01</span>
+        <span class="values-text">Fair Price liczone autorskim algorytmem statystycznym, nie średnią z 3 ofert.</span>
+      </li>
+      <li>
+        <span class="values-num">02</span>
+        <span class="values-text">Deal Score sortuje rynek od okazji do drogich. Sekundy zamiast godzin scrollowania.</span>
+      </li>
+      <li>
+        <span class="values-num">03</span>
+        <span class="values-text">Powiadomienia gdy pojawia się oferta poniżej Fair Price w Twoim segmencie.</span>
+      </li>
+    </ul>
+
+    <!-- CTA section — large form -->
+    <section class="cta">
+      <div class="cta-meta label">
+        <span>/ 02</span>
+        <span>ZGŁOSZENIE</span>
+        <span class="hero-meta-line" aria-hidden="true"></span>
+      </div>
+
+      <div class="cta-grid">
+        <div class="cta-copy">
+          <h2 class="cta-title">
+            Pierwsza piętnastka<br/>
+            <em>buduje to ze mną.</em>
+          </h2>
+          <p class="cta-desc">
+            Pracuję 1-na-1 z pierwszą piętnastką użytkowników — darmowy dostęp,
+            osobisty onboarding, w zamian dwadzieścia minut feedbacku co dwa tygodnie.
+            Wybieram osobiście.
+          </p>
+          <ul class="cta-bullets mono">
+            <li><span class="cta-bullet-dot" aria-hidden="true"></span> Pełny dostęp do MVP od dnia 1</li>
+            <li><span class="cta-bullet-dot" aria-hidden="true"></span> Cena zamrożona na zawsze po becie</li>
+            <li><span class="cta-bullet-dot" aria-hidden="true"></span> Bezpośredni kontakt z founderem</li>
+          </ul>
+        </div>
+
+        <div class="instrument">
+          <div class="instrument-head">
+            <span class="label">Zgłoszenie do bety</span>
+            <span class="mono ticks" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </span>
+          </div>
+
+          <form id="waitlist" class="form" novalidate>
+            <div class="field">
+              <label for="name" class="label">Imię</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                autocomplete="given-name"
+                placeholder="Jan"
+              />
+            </div>
+
+            <div class="field">
+              <label for="email" class="label">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                autocomplete="email"
+                placeholder="jan@firma.pl"
+              />
+            </div>
+
+            <div class="field">
+              <label for="scale" class="label">Skala działalności</label>
+              <div class="select-wrap">
+                <select id="scale" name="scale" required>
+                  <option value="" disabled selected>Wybierz…</option>
+                  <option value="1-4">1–4 auta / miesiąc · fliper</option>
+                  <option value="5-15">5–15 aut / miesiąc · mały komis</option>
+                  <option value="16-30">16–30 aut / miesiąc · średni komis</option>
+                  <option value="30+">30+ aut / miesiąc · duży gracz</option>
+                  <option value="importer">Import z zagranicy</option>
+                  <option value="inne">Inne / dopiero zaczynam</option>
+                </select>
+                <span class="select-arrow mono" aria-hidden="true">▾</span>
+              </div>
+            </div>
+
+            <!-- honeypot for bots -->
+            <div class="hp" aria-hidden="true">
+              <label for="company">Firma</label>
+              <input id="company" name="company" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <button type="submit" class="submit">
+              <span class="submit-label">Zgłoś się do bety</span>
+              <span class="submit-arrow" aria-hidden="true">→</span>
+            </button>
+
+            <p id="msg" class="msg" role="status" aria-live="polite"></p>
+
+            <p class="legal mono">
+              Bez spamu. Bez odsprzedaży listy. Odpowiadam osobiście w 48h.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div class="footnote mono">
+      <span>MotoIQ v0.1 · closed beta</span>
+      <span>·</span>
+      <span>gdańsk · pl</span>
+      <span>·</span>
+      <span id="year"></span>
+    </div>
+  </main>
+
+  <script is:inline>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const form = document.getElementById('waitlist');
+    const msg = document.getElementById('msg');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      msg.textContent = '';
+      msg.className = 'msg';
+
+      const data = new FormData(form);
+      const payload = {
+        name: data.get('name'),
+        email: data.get('email'),
+        scale: data.get('scale'),
+        company: data.get('company'), // honeypot
+      };
+
+      const btn = form.querySelector('button[type=submit]');
+      btn.disabled = true;
+      btn.querySelector('.submit-label').textContent = 'Wysyłam…';
+
+      try {
+        const res = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const json = await res.json();
+
+        if (!res.ok) throw new Error(json.error || 'Coś poszło nie tak.');
+
+        msg.textContent = '✓ Zgłoszenie przyjęte. Odezwę się osobiście w 48h.';
+        msg.classList.add('msg-ok');
+        form.reset();
+      } catch (err) {
+        msg.textContent = '✕ ' + (err.message || 'Spróbuj jeszcze raz.');
+        msg.classList.add('msg-err');
+      } finally {
+        btn.disabled = false;
+        btn.querySelector('.submit-label').textContent = 'Zgłoś się do bety';
+      }
+    });
+  </script>
+</Base>
+
+<style>
+  .page {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 28px 32px 60px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Top bar ─────────────────────────────── */
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .brand-mark {
+    color: var(--accent);
+    display: inline-flex;
+  }
+
+  .brand-name {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: -0.02em;
+  }
+
+  .status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.12em;
+  }
+
+  .status-dot {
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--accent);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+  }
+
+  /* ── Hero ─────────────────────────────── */
+  .hero {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 60px 80px;
+    align-items: end;
+    padding: 64px 0 56px;
+  }
+
+  .hero-meta {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    animation: rise 0.6s ease-out both;
+  }
+
+  .hero-meta-line {
+    flex: 1;
+    min-width: 40px;
+    height: 1px;
+    background: linear-gradient(to right, var(--border-strong), transparent);
+  }
+
+  .headline {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(40px, 6.5vw, 80px);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    animation: rise 0.7s ease-out 0.1s both;
+  }
+
+  .headline em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--accent);
+  }
+
+  .lede {
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--text-dim);
+    max-width: 44ch;
+    padding-bottom: 8px;
+    animation: rise 0.7s ease-out 0.2s both;
+  }
+
+  .lede .hl {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* ── Value props ─────────────────────── */
+  .values {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    animation: rise 0.7s ease-out 0.4s both;
+  }
+
+  .values li {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    gap: 14px;
+    align-items: baseline;
+    padding: 24px 32px 24px 0;
+    border-right: 1px solid var(--border);
+  }
+
+  .values li:last-child {
+    border-right: none;
+    padding-right: 0;
+  }
+
+  .values li:not(:first-child) {
+    padding-left: 32px;
+  }
+
+  .values-num {
+    color: var(--accent);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+
+  .values-text {
+    font-family: var(--font-display);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text-dim);
+    letter-spacing: -0.005em;
+  }
+
+  /* ── CTA section ─────────────────────── */
+  .cta {
+    padding-top: 72px;
+  }
+
+  .cta-meta {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 36px;
+  }
+
+  .cta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .cta-copy {
+    padding-top: 8px;
+  }
+
+  .cta-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(32px, 4.2vw, 52px);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+  }
+
+  .cta-title em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--accent);
+  }
+
+  .cta-desc {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-dim);
+    max-width: 44ch;
+    margin-bottom: 28px;
+  }
+
+  .cta-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--text);
+  }
+
+  .cta-bullets li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .cta-bullet-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 0 8px var(--accent-glow);
+  }
+
+  /* ── Instrument card (form) ─────────── */
+  .instrument {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    position: relative;
+  }
+
+  .instrument::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius);
+    padding: 1px;
+    background: linear-gradient(180deg, var(--accent-dim), transparent 40%);
+    -webkit-mask:
+      linear-gradient(#000, #000) content-box,
+      linear-gradient(#000, #000);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .instrument-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-bottom: 24px;
+    border-bottom: 1px dashed var(--border-strong);
+  }
+
+  .ticks {
+    display: flex;
+    gap: 4px;
+    align-items: end;
+    height: 14px;
+  }
+  .ticks span {
+    width: 2px;
+    background: var(--text-mute);
+    display: block;
+  }
+  .ticks span:nth-child(1) { height: 5px; }
+  .ticks span:nth-child(2) { height: 7px; }
+  .ticks span:nth-child(3) { height: 9px; }
+  .ticks span:nth-child(4) { height: 12px; }
+  .ticks span:nth-child(5) { height: 14px; background: var(--accent); }
+  .ticks span:nth-child(6) { height: 11px; }
+  .ticks span:nth-child(7) { height: 6px; }
+
+  /* ── Form fields ─────────────────────── */
+  .form { display: flex; flex-direction: column; gap: 20px; }
+
+  .field { display: flex; flex-direction: column; gap: 8px; }
+
+  .field input,
+  .field select {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border-strong);
+    color: var(--text);
+    font-family: var(--font-display);
+    font-size: 18px;
+    padding: 10px 0;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+
+  .field input::placeholder {
+    color: var(--text-mute);
+  }
+
+  .field input:focus,
+  .field select:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+
+  .field input:invalid:not(:placeholder-shown) {
+    border-color: var(--danger);
+  }
+
+  /* Custom select */
+  .select-wrap {
+    position: relative;
+  }
+  .field select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 28px;
+    cursor: pointer;
+  }
+  .field select option {
+    background: var(--bg-card);
+    color: var(--text);
+  }
+  .select-arrow {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-mute);
+    pointer-events: none;
+    font-size: 14px;
+  }
+
+  .hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .submit {
+    margin-top: 16px;
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 18px 22px;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: var(--radius);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.15s, box-shadow 0.2s, transform 0.15s;
+    position: relative;
+  }
+
+  .submit:hover:not(:disabled) {
+    background: var(--accent-dim);
+    box-shadow: 0 0 28px -8px var(--accent-glow);
+    transform: translateY(-1px);
+  }
+
+  .submit:active:not(:disabled) { transform: translateY(0); }
+  .submit:disabled { opacity: 0.5; cursor: wait; }
+
+  .submit-arrow {
+    font-family: var(--font-mono);
+    transition: transform 0.2s;
+    font-size: 16px;
+  }
+
+  .submit:hover:not(:disabled) .submit-arrow {
+    transform: translateX(4px);
+  }
+
+  .msg {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    min-height: 1.2em;
+    margin-top: 4px;
+  }
+  .msg-ok  { color: var(--success); }
+  .msg-err { color: var(--danger); }
+
+  .legal {
+    font-size: 11px;
+    color: var(--text-mute);
+    margin-top: 4px;
+    line-height: 1.5;
+  }
+
+  /* ── Footnote ─────────────────────── */
+  .footnote {
+    display: flex;
+    gap: 10px;
+    color: var(--text-mute);
+    font-size: 11px;
+    margin-top: 72px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+
+  /* ── Animation ─────────────────────── */
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Responsive ─────────────────────── */
+  @media (max-width: 960px) {
+    .hero {
+      grid-template-columns: 1fr;
+      gap: 28px;
+      padding: 48px 0 40px;
+    }
+    .headline { font-size: clamp(36px, 9vw, 56px); }
+
+    .values {
+      grid-template-columns: 1fr;
+    }
+    .values li {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+    .values li:not(:first-child) { padding-left: 0; }
+    .values li:last-child {
+      border-bottom: none;
+    }
+
+    .cta { padding-top: 56px; }
+    .cta-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .cta-title { font-size: clamp(28px, 7vw, 40px); }
+    .instrument { padding: 24px; }
+    .field input,
+    .field select { font-size: 16px; }
+  }
+</style>

@@ -1,0 +1,3 @@
+# Local dev only — w produkcji ustaw w panelu Cloudflare Pages
+SUPABASE_URL = "https://twoj-projekt.supabase.co"
+SUPABASE_SERVICE_KEY = "eyJ...service_role_key..."
