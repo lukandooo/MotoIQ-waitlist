@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
 import { createClient } from '@supabase/supabase-js';
+import type { StringValidation } from 'astro:schema';
 
 export const prerender = false;
 
@@ -11,9 +12,10 @@ export const POST: APIRoute = async ({ request, locals }) => {
     const body = await request.json().catch(() => null);
     if (!body) return json({ error: 'Nieprawidłowe dane.' }, 400);
 
-    const { name, email, scale, company } = body as {
+    const { name, email, phone, scale, company } = body as {
       name?: string;
       email?: string;
+      phone?: string;
       scale?: string;
       company?: string;
     };
@@ -26,6 +28,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
     // Validate
     const cleanName = (name || '').trim().slice(0, 80);
     const cleanEmail = (email || '').trim().toLowerCase().slice(0, 200);
+    const cleanPhone = (phone || '').trim().slice(0, 30);
     const cleanScale = (scale || '').trim();
 
     if (!cleanName) return json({ error: 'Podaj imię.' }, 400);
@@ -53,6 +56,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
       .insert({
         name: cleanName,
         email: cleanEmail,
+        phone: cleanPhone || null,
         scale: cleanScale,
       });
 
