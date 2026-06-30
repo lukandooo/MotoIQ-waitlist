@@ -455,7 +455,7 @@
 .wycena-demo-result {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   padding-top: 20px;
   margin-top: 4px;
 }
@@ -906,6 +906,21 @@
 
 /* ── Responsive ─────────────────────── */
 @media (max-width: 960px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .status {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .hero-meta {
+    display: none;
+  }
+
   .page {
     padding: 20px 20px 48px;
   }
@@ -964,13 +979,6 @@
     animation-duration: 22s;
   }
 
-  /* Na mobile wszystkie logo wracają do jednego rozmiaru (40px), nadpisując
-     indywidualne ustawienia z desktopu powyżej. Jeśli chcesz zachować różnice
-     w rozmiarach też na mobile, usuń tę regułę. */
-  .brand-tile-m {
-    height: 40px;
-  }
-
   .wycena-grid {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -978,6 +986,7 @@
 
   .wycena-title { font-size: clamp(28px, 7vw, 40px); }
   .wycena-demo { padding: 22px; }
+  
 
   .cta-grid {
     grid-template-columns: 1fr;
