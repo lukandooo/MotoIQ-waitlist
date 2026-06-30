@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import '../styles/landing.css';
 ---
 
-<Base title="MotoIQ" description="MotoIQ to platforma analityczna dla handlarzy samochodów używanych. Skanuje OLX i Otomoto, wycenia każde ogłoszenie i pokazuje które auta są naprawdę okazją.">
+<Base title="MotoIQ" description="MotoIQ przeszukuje OLX i Otomoto, ocenia każde ogłoszenie i zwraca tylko te warte uwagi. Sprawdź też realną wartość konkretnego auta w sekundę dzięki Wycenie.">
   <main class="page">
 
     <!-- Top status bar -->
@@ -13,7 +13,9 @@ import '../styles/landing.css';
       </div>
       <div class="status mono">
         <span class="status-dot" aria-hidden="true"></span>
-        <span>CLOSED BETA · 15 MIEJSC</span>
+        <span>WCZESNY DOSTĘP · PL</span>
+        <span class="status-sep">·</span>
+        <span class="status-badge" data-default="POLSKI STARTUP" data-hover="POLSKA GUROM!!">POLSKI STARTUP</span>
       </div>
     </header>
 
@@ -21,23 +23,23 @@ import '../styles/landing.css';
     <section class="hero">
       <div class="hero-meta label">
         <span>/ 01</span>
-        <span>EARLY ACCESS · PL</span>
+        <span>WCZESNY DOSTĘP · PL</span>
         <span class="hero-meta-line" aria-hidden="true"></span>
         <span>DACH · SK · UK WKRÓTCE</span>
       </div>
 
       <h1 class="headline">
-        Znajdź niedoszacowane<br/>
-        auta <em>zanim</em><br/>
-        zrobi to konkurencja.
+        Rynek aut ma<br/>
+        więcej <em>danych</em><br/>
+        niż <em>czasu</em> na nie.
       </h1>
 
       <p class="lede">
-        MotoIQ to narzędzie analityczne dla profesjonalnych handlarzy samochodami używanymi.
-        Platforma skanuje ogłoszenia na OLX i Otomoto w czasie rzeczywistym i dla każdego auta
-        wylicza <span class="hl">Fair Price</span> czyli jego realną wartość rynkową opartą na
-        autorskim algorytmie statystycznym. Na tej podstawie każde ogłoszenie dostaje
-        <span class="hl">Deal Score</span> pokazujący wprost czy to okazja czy przepłacone.
+        Każdego dnia na OLX i Otomoto pojawiają się tysiące nowych ogłoszeń.
+        MotoIQ przegląda je za Ciebie non stop, ocenia każde pod względem
+        realnej wartości i zwraca Ci tylko te, które rzeczywiście warto zobaczyć.
+        Ty patrzysz na dziesięć najlepszych ofert, nie na wszystkie tysiące.
+        Oszczędzasz godziny i masz szansę zareagować pierwszy zanim oferta zniknie.
       </p>
     </section>
 
@@ -45,15 +47,15 @@ import '../styles/landing.css';
     <ul class="values mono" aria-label="Co dostajesz">
       <li>
         <span class="values-num">01</span>
-        <span class="values-text">Fair Price liczone autorskim algorytmem statystycznym, nie średnią z 3 ofert.</span>
+        <span class="values-text">Powiadomienia o nowych okazjach w sekundy od ich pojawienia się na rynku.</span>
       </li>
       <li>
         <span class="values-num">02</span>
-        <span class="values-text">Deal Score sortuje rynek od okazji do drogich. Sekundy zamiast godzin scrollowania.</span>
+        <span class="values-text">Zaawansowany algorytm wylicza które ogłoszenia są najbardziej opłacalne i tylko te zwraca.</span>
       </li>
       <li>
         <span class="values-num">03</span>
-        <span class="values-text">Powiadomienia gdy pojawia się oferta poniżej Fair Price w Twoim segmencie.</span>
+        <span class="values-text">Filtrujesz po marce, budżecie i lokalizacji. Sam narzucasz swoje wymagania, reszta dzieje się automatycznie.</span>
       </li>
     </ul>
 
@@ -68,37 +70,37 @@ import '../styles/landing.css';
       <div class="how-grid">
         <div class="how-step">
           <span class="how-step-num">KROK 01</span>
-          <h3 class="how-step-title">Wcześniej: godziny ręcznej analizy</h3>
+          <h3 class="how-step-title">Twoje wytyczne</h3>
           <p class="how-step-desc">
-            Skakanie między OLX, Otomoto i konkurencją. Ręczne porównywanie cen,
-            roczników, przebiegu. Arkusze kalkulacyjne. Przegapione okazje bo ktoś
-            był szybszy.
+            Oprócz typowych wytycznych jak marka, model, budżet, lokalizacja, oferujemy niestandardowe wytyczne.
+            Od koloru, mocy silnika, po pierwszego właściciela, fakturę VAT, autoryzowanego dealera i więcej.
+            Ustawiasz raz, MotoIQ pracuje
+            w tle non stop, dzień i noc.
           </p>
-          <span class="how-step-time">
-            <span class="how-before">3 do 5 godzin dziennie</span>
-          </span>
+          <span class="how-step-time">2 minuty setupu</span>
         </div>
 
         <div class="how-step">
           <span class="how-step-num">KROK 02</span>
-          <h3 class="how-step-title">MotoIQ robi to za Ciebie</h3>
+          <h3 class="how-step-title">Zaawansowany, autorski algorytm</h3>
           <p class="how-step-desc">
-            Platforma non-stop skanuje tysiące ogłoszeń i dla każdego auta wylicza
-            jego realną wartość rynkową. Filtrujesz po marce, modelu, roczniku i
-            budżecie. Dostajesz gotową listę posortowaną od największej okazji.
+            Każde ogłoszenie spełniające Twoje kryteria przechodzi przez nasz
+            autorski wzór matematyczny, który bierze pod uwagę markę, model,
+            rocznik, przebieg i dziesiątki innych zależności jednocześnie.
+            Widzisz tylko te oferty, które wypadają najlepiej.
           </p>
-          <span class="how-step-time">kilka kliknięć</span>
+          <span class="how-step-time">w czasie rzeczywistym</span>
         </div>
 
         <div class="how-step">
           <span class="how-step-num">KROK 03</span>
-          <h3 class="how-step-title">Działasz zanim ktokolwiek zdąży</h3>
+          <h3 class="how-step-title">Powiadomienie w czasie rzeczywistym</h3>
           <p class="how-step-desc">
-            Powiadomienie o nowej okazji dostajesz w minuty od pojawienia się
-            ogłoszenia. Dzwonisz pierwszy, negocjonujesz z pozycji siły bo wiesz
-            ile auto naprawdę warte.
+            Gdy znajdziemy ogłoszenie warte uwagi, które spełnia Twoje wytyczne,
+            dostajesz od razu powiadomienie. Działasz pierwszy, zanim ktoś inny
+            zdąży zadzwonić.
           </p>
-          <span class="how-step-time">przewaga czasowa nad rynkiem</span>
+          <span class="how-step-time">przewaga czasowa</span>
         </div>
       </div>
 
@@ -107,8 +109,9 @@ import '../styles/landing.css';
         <span class="expansion-label">ZASIĘG</span>
         <p class="expansion-text">
           Polska to pierwszy rynek. Granica nas nie ogranicza. Integrujemy kolejne
-          portale ogłoszeniowe w Europie i wkrótce będziesz mógł analizować oferty
-          z Niemiec, Szwecji i innych krajów w jednym miejscu.
+          portale ogłoszeniowe w Europie, a to Ty zdecydujesz które dołączą najpierw.
+          Budujemy MotoIQ z myślą o ludziach, więc to społeczność wybiera, jaki
+          rynek wskoczy na podium jako następny.
         </p>
         <div class="expansion-markets">
           <span class="market-tag active">PL · OLX</span>
@@ -120,43 +123,164 @@ import '../styles/landing.css';
       </div>
     </section>
 
+    <!-- Marki: TEST sekcja, dwa warianty do porównania -->
+    <section class="brands">
+      <div class="brands-meta label">
+        <span>/ 03</span>
+        <span>MARKI W BAZIE</span>
+        <span class="hero-meta-line" aria-hidden="true"></span>
+      </div>
+
+      <div class="brands-top-grid">
+        <div class="brands-copy">
+          <h2 class="brands-title">
+            Zaczynamy od marek,<br/>
+            <em>które dominują wtórny rynek.</em>
+          </h2>
+
+          <p class="brands-desc">
+            Na start obejmujemy 10 kluczowych marek, które stanowią
+            największą część obrotu samochodami używanymi w Polsce.
+            Docelowo zamierzamy zintegrować wszystkie najpopularniejsze marki na świecie.
+            To użytkownicy będą wybierać, która marka ma się pojawić jako następna.
+          </p>
+        </div>
+
+        <ul class="brands-name-list" aria-label="Marki w bazie MotoIQ">
+          <li class="brand-name-tag">Volkswagen</li>
+          <li class="brand-name-tag">Audi</li>
+          <li class="brand-name-tag">Ford</li>
+          <li class="brand-name-tag">Opel</li>
+          <li class="brand-name-tag">BMW</li>
+          <li class="brand-name-tag">Mercedes-Benz</li>
+          <li class="brand-name-tag">Toyota</li>
+          <li class="brand-name-tag">Skoda</li>
+          <li class="brand-name-tag">Renault</li>
+          <li class="brand-name-tag">Kia</li>
+        </ul>
+      </div>
+
+      <div class="brands-marquee">
+        <div class="brands-marquee-track" id="brands-track">
+          <div class="brand-tile-m brand-vw"><img src="/logos/volkswagen-logo.svg" alt="Volkswagen" loading="lazy" /></div>
+          <div class="brand-tile-m brand-audi"><img src="/logos/audi-logo.svg" alt="Audi" loading="lazy" /></div>
+          <div class="brand-tile-m brand-ford"><img src="/logos/ford-logo.svg" alt="Ford" loading="lazy" /></div>
+          <div class="brand-tile-m brand-opel"><img src="/logos/opel-logo.svg" alt="Opel" loading="lazy" /></div>
+          <div class="brand-tile-m brand-bmw"><img src="/logos/bmw-logo.svg" alt="BMW" loading="lazy" /></div>
+          <div class="brand-tile-m brand-mercedes"><img src="/logos/mercedes-benz-logo.svg" alt="Mercedes-Benz" loading="lazy" /></div>
+          <div class="brand-tile-m brand-toyota"><img src="/logos/toyota-logo.svg" alt="Toyota" loading="lazy" /></div>
+          <div class="brand-tile-m brand-skoda"><img src="/logos/skoda-logo.svg" alt="Skoda" loading="lazy" /></div>
+          <div class="brand-tile-m brand-renault"><img src="/logos/renault-logo.svg" alt="Renault" loading="lazy" /></div>
+          <div class="brand-tile-m brand-kia"><img src="/logos/kia-logo.svg" alt="Kia" loading="lazy" /></div>
+          <!-- duplikat do płynnej pętli, musi być identyczny z setem powyżej -->
+          <div class="brand-tile-m brand-vw" aria-hidden="true"><img src="/logos/volkswagen-logo.svg" alt="" loading="lazy" /></div>
+          <div class="brand-tile-m brand-audi" aria-hidden="true"><img src="/logos/audi-logo.svg" alt="" loading="lazy" /></div>
+          <div class="brand-tile-m brand-ford" aria-hidden="true"><img src="/logos/ford-logo.svg" alt="" loading="lazy" /></div>
+          <div class="brand-tile-m brand-opel" aria-hidden="true"><img src="/logos/opel-logo.svg" alt="" loading="lazy" /></div>
+          <div class="brand-tile-m brand-bmw" aria-hidden="true"><img src="/logos/bmw-logo.svg" alt="" loading="lazy" /></div>
+          <div class="brand-tile-m brand-mercedes" aria-hidden="true"><img src="/logos/mercedes-benz-logo.svg" alt="" loading="lazy" /></div>
+          <div class="brand-tile-m brand-toyota" aria-hidden="true"><img src="/logos/toyota-logo.svg" alt="" loading="lazy" /></div>
+          <div class="brand-tile-m brand-skoda" aria-hidden="true"><img src="/logos/skoda-logo.svg" alt="" loading="lazy" /></div>
+          <div class="brand-tile-m brand-renault" aria-hidden="true"><img src="/logos/renault-logo.svg" alt="" loading="lazy" /></div>
+          <div class="brand-tile-m brand-kia" aria-hidden="true"><img src="/logos/kia-logo.svg" alt="" loading="lazy" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wycena -->
+    <section class="wycena">
+      <div class="wycena-meta label">
+        <span>/ 04</span>
+        <span>WYCENA</span>
+        <span class="hero-meta-line" aria-hidden="true"></span>
+      </div>
+
+      <div class="wycena-grid">
+        <div class="wycena-copy">
+          <h2 class="wycena-title">
+            Zanim zadzwonisz,<br/>
+            <em>wiedz ile to warte.</em>
+          </h2>
+          <p class="wycena-desc">
+            Masz konkretny model na oku? Wpisujesz markę, rocznik i przebieg.
+            Wycena sprawdza realne ceny transakcyjne na rynku i mówi Ci
+            jedną liczbę: ile to auto powinno kosztować.
+          </p>
+          <p class="wycena-desc">
+            Kupujesz, wiesz czy nie przepłacasz. Sprzedajesz, wiesz jaką cenę
+            ustawić żeby nie czekać miesiąc i nie oddać auta za grosze.
+            Jedna funkcja, dwa zastosowania.
+          </p>
+          <p class="wycena-desc">
+            Razem z wyceną zobaczysz też kilka przykładowych ofert z rynku
+            dla tego samego modelu i rocznika, żebyś mógł porównać liczbę
+            z realnymi ogłoszeniami, nie tylko zaufać liczbie na ekranie.
+          </p>
+        </div>
+
+        <div class="wycena-demo" aria-hidden="true">
+          <div class="wycena-demo-head">
+            <span class="label">Przykład</span>
+          </div>
+          <div class="wycena-demo-row">
+            <span class="wycena-demo-label">Marka</span>
+            <span class="wycena-demo-value">Volkswagen</span>
+          </div>
+          <div class="wycena-demo-row">
+            <span class="wycena-demo-label">Model</span>
+            <span class="wycena-demo-value">Passat B8</span>
+          </div>
+          <div class="wycena-demo-row">
+            <span class="wycena-demo-label">Rocznik</span>
+            <span class="wycena-demo-value">2019</span>
+          </div>
+          <div class="wycena-demo-row">
+            <span class="wycena-demo-label">Przebieg</span>
+            <span class="wycena-demo-value">112 000 km</span>
+          </div>
+          <div class="wycena-demo-row">
+            <span class="wycena-demo-label">Sprzedawca</span>
+            <span class="wycena-demo-value">Osoba prywatna</span>
+          </div>
+          <div class="wycena-demo-result">
+            <span class="wycena-demo-result-label label">Realny zakres cen</span>
+            <span class="wycena-demo-result-value mono">64 900 <span class="wycena-demo-sep">–</span> 71 200 <span class="wycena-demo-currency">PLN</span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA section -->
     <section class="cta">
       <div class="cta-meta label">
-        <span>/ 03</span>
-        <span>ZGŁOSZENIE</span>
+        <span>/ 05</span>
+        <span>WCZESNY DOSTĘP</span>
         <span class="hero-meta-line" aria-hidden="true"></span>
       </div>
 
       <div class="cta-grid">
         <div class="cta-copy">
           <h2 class="cta-title">
-            Szukamy 15 handlarzy<br/>
-            <em>którzy znają rynek od środka.</em>
+            Bądź pierwszy,<br/>
+            <em>kiedy ruszymy.</em>
           </h2>
           <p class="cta-desc">
-            MotoIQ budujemy razem z osobami które siedzą w branży na co dzień.
-            Potrzebujemy Twojej wiedzy: co w pracy handlarza zajmuje najwięcej czasu,
-            gdzie tracisz pieniądze, czego żaden system jeszcze nie rozwiązał.
-            <strong>Ty dajesz nam perspektywę, my budujemy narzędzie które
-            na nią odpowiada.</strong>
-          </p>
-          <p class="cta-desc">
-            W zamian dostajesz dożywotni dostęp do MotoIQ za darmo lub po cenie
-            zamrożonej na zawsze, jeszcze zanim platforma trafi do szerokiej
-            sprzedaży.
+            Jesteśmy na wczesnym etapie i to działa na Twoją korzyść. Pierwsi
+            użytkownicy dostają dostęp najszybciej i mają największy wpływ na to,
+            jak MotoIQ ostatecznie wygląda.
+            <strong>Bez kart, bez zobowiązań, bez spamu.</strong>
           </p>
           <ul class="cta-bullets mono">
-            <li><span class="cta-bullet-dot" aria-hidden="true"></span> Dożywotni dostęp za darmo lub po cenie zamrożonej</li>
-            <li><span class="cta-bullet-dot" aria-hidden="true"></span> Realny wpływ na to co platforma robi i jak działa</li>
-            <li><span class="cta-bullet-dot" aria-hidden="true"></span> Bezpośredni kontakt z founderem, nie z supportem</li>
-            <li><span class="cta-bullet-dot" aria-hidden="true"></span> Produkt szyty na realne problemy Twojej branży</li>
+            <li><span class="cta-bullet-dot" aria-hidden="true"></span> Dostęp w dniu startu, bez czekania w kolejce</li>
+            <li><span class="cta-bullet-dot" aria-hidden="true"></span> Wczesne ceny promocyjne dla pierwszych użytkowników</li>
+            <li><span class="cta-bullet-dot" aria-hidden="true"></span> Jeden mail kiedy produkt będzie gotowy, bez spamu</li>
+            <li><span class="cta-bullet-dot" aria-hidden="true"></span> Bezpośredni kontatkt z Founderem;)</li>
           </ul>
         </div>
 
         <div class="instrument">
           <div class="instrument-head">
-            <span class="label">Zgłoszenie do bety</span>
+            <span class="label">Zapisz się</span>
             <span class="mono ticks" aria-hidden="true">
               <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
             </span>
@@ -183,12 +307,12 @@ import '../styles/landing.css';
                 type="email"
                 required
                 autocomplete="email"
-                placeholder="jan@firma.pl"
+                placeholder="jan@gmail.com"
               />
             </div>
 
             <div class="field">
-              <label for="phone" class="label">Telefon</label>
+              <label for="phone" class="label">Telefon (opcjonalnie)</label>
               <input
                 id="phone"
                 name="phone"
@@ -198,22 +322,6 @@ import '../styles/landing.css';
               />
             </div>
 
-            <div class="field">
-              <label for="scale" class="label">Skala działalności</label>
-              <div class="select-wrap">
-                <select id="scale" name="scale" required>
-                  <option value="" disabled selected>Wybierz…</option>
-                  <option value="1-4">1 do 4 aut / miesiąc · fliper</option>
-                  <option value="5-15">5 do 15 aut / miesiąc · mały komis</option>
-                  <option value="16-30">16 do 30 aut / miesiąc · średni komis</option>
-                  <option value="30+">30 i więcej aut / miesiąc · duży gracz</option>
-                  <option value="importer">Import z zagranicy</option>
-                  <option value="inne">Inne / dopiero zaczynam</option>
-                </select>
-                <span class="select-arrow mono" aria-hidden="true">▾</span>
-              </div>
-            </div>
-
             <!-- honeypot for bots -->
             <div class="hp" aria-hidden="true">
               <label for="company">Firma</label>
@@ -221,14 +329,14 @@ import '../styles/landing.css';
             </div>
 
             <button type="submit" class="submit">
-              <span class="submit-label">Zgłoś się do bety</span>
+              <span class="submit-label">Zapisz się</span>
               <span class="submit-arrow" aria-hidden="true">→</span>
             </button>
 
             <p id="msg" class="msg" role="status" aria-live="polite"></p>
 
             <p class="legal mono">
-              Bez spamu. Bez odsprzedaży listy. Odpowiadam osobiście w 48h.
+              Bez spamu. Bez odsprzedaży listy. Wypisz się jednym kliknięciem.
             </p>
           </form>
         </div>
@@ -236,7 +344,7 @@ import '../styles/landing.css';
     </section>
 
     <div class="footnote mono">
-      <span>MotoIQ v0.1 · closed beta</span>
+      <span>MotoIQ v0.1</span>
       <span>·</span>
       <span>gdańsk · pl</span>
       <span>·</span>
@@ -245,6 +353,63 @@ import '../styles/landing.css';
       <a href="mailto:swiecicki.luka@gmail.com" class="footnote-email">swiecicki.luka@gmail.com</a>
     </div>
   </main>
+
+  <script is:inline>
+    // Easter egg: "POLSKI STARTUP" -> "POLSKA GUROM" na hover
+    (function () {
+      const badge = document.querySelector('.status-badge');
+      if (!badge) return;
+
+      const original = badge.dataset.default || badge.textContent;
+      const hoverText = badge.dataset.hover;
+      if (!hoverText) return;
+
+      badge.addEventListener('mouseenter', () => {
+        badge.textContent = hoverText;
+      });
+      badge.addEventListener('mouseleave', () => {
+        badge.textContent = original;
+      });
+    })();
+  </script>
+
+  <script is:inline>
+    // Pasek marek: mierzymy realną szerokość jednego zestawu logo (10 marek + gapy)
+    // i ustawiamy precyzyjny dystans animacji, żeby pętla zamykała się bez przeskoku.
+    (function () {
+      const track = document.getElementById('brands-track');
+      if (!track) return;
+
+      function setLoopDistance() {
+        const tiles = Array.from(track.children);
+        const half = tiles.length / 2;
+        if (half < 1) return;
+
+        // ostatni kafel pierwszego zestawu
+        const lastOfFirstSet = tiles[half - 1];
+        const firstTile = tiles[0];
+
+        const gap = parseFloat(getComputedStyle(track).gap) || 0;
+        const distance =
+          (lastOfFirstSet.offsetLeft + lastOfFirstSet.offsetWidth) -
+          firstTile.offsetLeft +
+          gap;
+
+        track.style.setProperty('--loop-distance', `${distance}px`);
+      }
+
+      // czekamy aż logo (SVG) się wczytają, inaczej offsetWidth bywa 0
+      window.addEventListener('load', setLoopDistance);
+      setLoopDistance();
+
+      // przelicz też po zmianie rozmiaru okna
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(setLoopDistance, 200);
+      });
+    })();
+  </script>
 
   <script is:inline>
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -262,7 +427,6 @@ import '../styles/landing.css';
         name: data.get('name'),
         email: data.get('email'),
         phone: data.get('phone'),
-        scale: data.get('scale'),
         company: data.get('company'),
       };
 
@@ -280,7 +444,7 @@ import '../styles/landing.css';
 
         if (!res.ok) throw new Error(json.error || 'Coś poszło nie tak.');
 
-        msg.textContent = '✓ Zgłoszenie przyjęte. Odezwę się osobiście w 48h.';
+        msg.textContent = '✓ Zapisano. Odezwiemy się jak będziemy gotowi.';
         msg.classList.add('msg-ok');
         form.reset();
       } catch (err) {
@@ -288,7 +452,7 @@ import '../styles/landing.css';
         msg.classList.add('msg-err');
       } finally {
         btn.disabled = false;
-        btn.querySelector('.submit-label').textContent = 'Zgłoś się do bety';
+        btn.querySelector('.submit-label').textContent = 'Zapisz się';
       }
     });
   </script>

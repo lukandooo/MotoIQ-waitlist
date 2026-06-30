@@ -50,6 +50,28 @@
   animation: pulse 2s ease-in-out infinite;
 }
 
+.status-sep {
+  color: var(--border-strong);
+}
+
+.status-badge {
+  display: inline-block;
+  background: #DC2626;
+  color: #FFFFFF;
+  padding: 4px 9px;
+  border-radius: 3px;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  cursor: default;
+  width: 118px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.status-badge:hover {
+  transform: scale(1.04);
+}
+
 @keyframes pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.35; }
@@ -199,6 +221,267 @@
 
 /* market-tag styles defined below with hover effects */
 
+/* ── Brands section (TEST: two variants) ──── */
+.brands {
+  padding-top: 80px;
+}
+
+.brands-meta {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 36px;
+}
+
+.brands-top-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 50ch) 1fr;
+  gap: 48px;
+  align-items: start;
+  margin-bottom: 40px;
+}
+
+.brands-copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.brands-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(28px, 3.6vw, 44px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin-bottom: 18px;
+}
+
+.brands-title em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.brands-desc {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-dim);
+}
+
+.brands-name-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: min-content;
+  gap: 10px;
+  width: 100%;
+}
+
+.brand-name-tag {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  padding: 10px 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: 2px;
+  color: var(--text-dim);
+  background: var(--bg-card);
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  cursor: default;
+}
+
+.brand-name-tag:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+/* ── Brands marquee ──────────────────── */
+.brands-marquee {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  padding: 44px 0;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.brands-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 88px;
+  width: max-content;
+  animation: marquee-scroll 32s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  --loop-distance: 50%;
+}
+
+.brand-tile-m {
+  flex-shrink: 0;
+  height: 56px;
+  display: flex;
+  align-items: center;
+}
+
+.brand-tile-m img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Każda marka ma własną klasę. Zmień wartość height żeby powiększyć lub
+   zmniejszyć TO JEDNO konkretne logo, bez dotykania HTML. Domyślnie wszystkie
+   na bazowym rozmiarze 56px (88px na mobile poniżej w media query). */
+.brand-vw       { height: 62px; }
+.brand-audi     { height: 30px; }
+.brand-ford     { height: 70px; }
+.brand-opel     { height: 70px; }
+.brand-bmw      { height: 56px; }
+.brand-mercedes { height: 60px; }
+.brand-toyota   { height: 65px; }
+.brand-skoda    { height: 65px; }
+.brand-renault  { height: 56px; }
+.brand-kia      { height: 70px; }
+
+.brand-vw img, .brand-audi img, .brand-ford img, .brand-opel img,
+.brand-bmw img, .brand-mercedes img, .brand-toyota img, .brand-skoda img,
+.brand-renault img, .brand-kia img {
+  height: 100%;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateZ(0) translateX(0); }
+  to   { transform: translateZ(0) translateX(calc(-1 * var(--loop-distance))); }
+}
+
+/* ── Wycena section ─────────────────── */
+.wycena {
+  padding-top: 80px;
+}
+
+.wycena-meta {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 36px;
+}
+
+.wycena-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.wycena-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(32px, 4.2vw, 52px);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+
+.wycena-title em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.wycena-desc {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-dim);
+  max-width: 46ch;
+  margin-bottom: 16px;
+}
+
+.wycena-desc:last-of-type {
+  margin-bottom: 0;
+}
+
+.wycena-demo {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  position: relative;
+}
+
+.wycena-demo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  padding: 1px;
+  background: linear-gradient(180deg, var(--accent-dim), transparent 40%);
+  -webkit-mask:
+    linear-gradient(#000, #000) content-box,
+    linear-gradient(#000, #000);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+.wycena-demo-head {
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px dashed var(--border-strong);
+}
+
+.wycena-demo-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.wycena-demo-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-mute);
+}
+
+.wycena-demo-value {
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.wycena-demo-result {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 20px;
+  margin-top: 4px;
+}
+
+.wycena-demo-result-label {
+  color: var(--text-dim);
+}
+
+.wycena-demo-result-value {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.wycena-demo-sep {
+  color: var(--text-mute);
+  font-weight: 400;
+  margin: 0 2px;
+}
+
+.wycena-demo-currency {
+  font-size: 14px;
+  color: var(--text-mute);
+}
 
 /* ── CTA section ─────────────────────── */
 .cta {
@@ -660,6 +943,41 @@
   }
 
   .cta { padding-top: 56px; }
+
+  .wycena { padding-top: 56px; }
+
+  .brands { padding-top: 56px; }
+
+  .brands-title { font-size: clamp(24px, 7vw, 34px); }
+
+  .brands-top-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .brands-name-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .brands-marquee-track {
+    gap: 56px;
+    animation-duration: 22s;
+  }
+
+  /* Na mobile wszystkie logo wracają do jednego rozmiaru (40px), nadpisując
+     indywidualne ustawienia z desktopu powyżej. Jeśli chcesz zachować różnice
+     w rozmiarach też na mobile, usuń tę regułę. */
+  .brand-tile-m {
+    height: 40px;
+  }
+
+  .wycena-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .wycena-title { font-size: clamp(28px, 7vw, 40px); }
+  .wycena-demo { padding: 22px; }
 
   .cta-grid {
     grid-template-columns: 1fr;
