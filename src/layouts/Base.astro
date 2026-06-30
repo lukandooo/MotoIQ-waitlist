@@ -8,8 +8,11 @@ interface Props {
 
 const {
   title = 'MotoIQ',
-  description = 'MotoIQ. Dołącz do listy oczekujących.',
+  description = 'MotoIQ przeszukuje OLX i Otomoto, ocenia każde ogłoszenie i zwraca tylko te warte uwagi. Sprawdź też realną wartość konkretnego auta w sekundę dzięki Wycenie.',
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://motoiq.eu').toString();
+const ogImageURL = new URL('/og-image.png', Astro.site ?? 'https://motoiq.eu').toString();
 ---
 
 <!doctype html>
@@ -18,11 +21,27 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:site_name" content="MotoIQ" />
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
     <meta name="theme-color" content="#FFFFFF" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

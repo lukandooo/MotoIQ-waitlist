@@ -6,5 +6,5 @@ export default defineConfig({
   adapter: cloudflare({
     platformProxy: { enabled: true },
   }),
-  site: 'https://motoiq.app',
+  site: 'https://motoiq.eu',
 });
