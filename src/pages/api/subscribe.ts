@@ -28,6 +28,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
 
     if (!cleanName) return json({ error: 'Podaj imię.' }, 400);
     if (!EMAIL_RE.test(cleanEmail)) return json({ error: 'Niepoprawny email.' }, 400);
+    if (!cleanPhone) return json({ error: 'Podaj numer telefonu.' }, 400);
 
     const env = (locals as any).runtime?.env ?? import.meta.env;
     const url = env.SUPABASE_URL;
