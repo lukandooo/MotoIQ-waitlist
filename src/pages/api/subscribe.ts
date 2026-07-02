@@ -30,9 +30,9 @@ export const POST: APIRoute = async ({ request, locals }) => {
     if (!EMAIL_RE.test(cleanEmail)) return json({ error: 'Niepoprawny email.' }, 400);
     if (!cleanPhone) return json({ error: 'Podaj numer telefonu.' }, 400);
 
-    const env = (locals as any).runtime?.env ?? import.meta.env;
-    const url = env.SUPABASE_URL;
-    const key = env.SUPABASE_SERVICE_KEY;
+    const env = (locals as any).runtime?.env;
+    const url = env?.SUPABASE_URL ?? import.meta.env.SUPABASE_URL;
+    const key = env?.SUPABASE_SERVICE_KEY ?? import.meta.env.SUPABASE_SERVICE_KEY;
 
     if (!url || !key) {
       console.error('Missing Supabase env');
