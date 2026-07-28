@@ -13,6 +13,60 @@ const {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://motoiq.eu').toString();
 const ogImageURL = new URL('/og-image.png', Astro.site ?? 'https://motoiq.eu').toString();
+
+const siteURL = (Astro.site ?? 'https://motoiq.eu').toString().replace(/\/$/, '');
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${siteURL}/#organization`,
+      name: 'MotoIQ',
+      url: `${siteURL}/`,
+      email: 'swiecicki.luka@gmail.com',
+      description:
+        'MotoIQ przeszukuje OLX i Otomoto, ocenia każde ogłoszenie i zwraca tylko te warte uwagi. Oferuje też Wycenę, która na podstawie realnych cen transakcyjnych mówi ile dane auto powinno kosztować.',
+      image: ogImageURL,
+      foundingDate: '2025',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Gdańsk',
+        addressCountry: 'PL',
+      },
+      areaServed: { '@type': 'Country', name: 'Poland' },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${siteURL}/#website`,
+      url: `${siteURL}/`,
+      name: 'MotoIQ',
+      description:
+        'Automatyczne przeszukiwanie OLX i Otomoto oraz wycena samochodów używanych w oparciu o realne ceny rynkowe.',
+      publisher: { '@id': `${siteURL}/#organization` },
+      inLanguage: 'pl-PL',
+    },
+    {
+      '@type': 'SoftwareApplication',
+      '@id': `${siteURL}/#software`,
+      name: 'MotoIQ',
+      url: `${siteURL}/`,
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Web',
+      inLanguage: 'pl-PL',
+      description:
+        'MotoIQ non stop monitoruje ogłoszenia samochodów używanych na OLX i Otomoto, ocenia je autorskim algorytmem pod kątem realnej opłacalności i powiadamia o najlepszych okazjach. Funkcja Wyceny podaje realny zakres cen dla konkretnej marki, rocznika i przebiegu.',
+      featureList: [
+        'Ciągłe monitorowanie ogłoszeń na OLX i Otomoto',
+        'Ocena opłacalności ogłoszeń autorskim algorytmem',
+        'Powiadomienia o nowych okazjach w czasie rzeczywistym',
+        'Filtry po marce, modelu, budżecie i lokalizacji',
+        'Wycena samochodu na podstawie realnych cen transakcyjnych',
+      ],
+      publisher: { '@id': `${siteURL}/#organization` },
+    },
+  ],
+};
 ---
 
 <!doctype html>
@@ -51,6 +105,8 @@ const ogImageURL = new URL('/og-image.png', Astro.site ?? 'https://motoiq.eu').t
     />
 
     <title>{title}</title>
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
     <script src="https://analytics.ahrefs.com/analytics.js" data-key="jNfvx3qUWFvmpCcGS1AmSQ" async></script>
 

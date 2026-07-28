@@ -1,0 +1,63 @@
+# MotoIQ
+
+> MotoIQ non stop przeszukuje ogłoszenia samochodów używanych na OLX i Otomoto, ocenia każde autorskim algorytmem pod kątem realnej opłacalności i powiadamia użytkownika tylko o najlepszych okazjach. Oddzielna funkcja Wyceny podaje realny zakres cen dla konkretnej marki, rocznika i przebiegu na podstawie faktycznych cen transakcyjnych z rynku.
+
+MotoIQ to polski startup (Gdańsk) na wczesnym etapie. Produkt jest w fazie zapisów na wczesny dostęp; publiczny start planowany na wrzesień 2026. Pierwszy rynek to Polska, kolejne portale (m.in. Mobile.de, AutoScout24, Blocket, Finn.no) planowane w dalszej kolejności.
+
+## Co robi MotoIQ
+
+- **Monitoring okazji**: ciągłe skanowanie nowych ogłoszeń na OLX i Otomoto w czasie rzeczywistym. Algorytm sprawdza kilkanaście tysięcy aktywnych ofert dziennie i identyfikuje te niedoszacowane względem realnego rynku.
+- **Ocena opłacalności (Deal Score)**: autorski algorytm wylicza wynik 0-100 dla każdej oferty, uwzględniając markę, model, generację, rocznik, przebieg, moc silnika, typ nadwozia, wariant (Base/GTI/RS/Allroad/etc.) i wiele innych zależności. Dostajesz tylko oferty warte uwagi.
+- **Fair Price**: dla każdej oferty pokazujemy realny zakres cen rynkowych i różnicę względem wartości godziwej. Wiesz nie tylko *ile* zaoszczędzisz, ale też *dlaczego* to jest okazja.
+- **Powiadomienia w sekundy**: użytkownik dostaje alert email w momencie pojawienia się dopasowanej oferty. Wyprzedzasz konkurencję, która przegląda ogłoszenia ręcznie.
+- **Zaawansowane filtry**: marka, model, generacja, budżet, lokalizacja, wariant (GTI, R, RS, Allroad, Alltrack), stan (bezwypadkowy, pierwszy właściciel, faktura VAT, autoryzowany dealer), moc, rodzaj paliwa, skrzynia biegów, napęd i wiele innych.
+- **Wycena on-demand**: podajesz markę, model, rocznik i przebieg — otrzymujesz realny zakres cen (dolna, mediana, górna) na podstawie aktualnie aktywnych ogłoszeń w tej klasie.
+
+## Dla kogo jest MotoIQ
+
+Trzy główne grupy użytkowników:
+
+- **Racjonalny nabywca rodzinny** — osoba szukająca praktycznego auta dla rodziny w przedziale 40-100k zł. Chce mieć pewność, że nie przepłaca i nie kupuje ukrytej wady. Zwykle korzysta z MotoIQ przez 2-4 miesiące podczas aktywnego szukania auta.
+- **Hobbysta / kolekcjoner** — poszukuje rzadkiego modelu w konkretnej specyfikacji (np. wariant GTI, RS, Allroad, konkretna generacja z określonym pakietem). Konfiguruje alerty i czeka na okazję czasami przez 6+ miesięcy.
+- **Analityczny nabywca** — programiści, inżynierowie, analitycy w wieku 30-50 lat. Podchodzą do zakupu auta jak do inwestycji: chcą zrozumieć algorytm, widzieć dane, porównywać. Docelowo najbardziej aktywna grupa MotoIQ.
+
+## Co odróżnia MotoIQ od alternatyw
+
+- **Deal Score liczony statystycznie, nie średnią z 3 ofert**: fair price to weighted median puli komparatywów (auta tego samego modelu, generacji, wariantu, w podobnym roku i przebiegu). Algorytm eliminuje outlier'y i uczciwie oznacza oferty jako "za mało danych" gdy nie ma podstawy do wyceny.
+- **Wariant jako twardy filtr**: Audi A4 Allroad nie porównuje się z A4 Avant, VW Golf GTI nie z zwykłym Golfem. Cenowo to inne rynki i MotoIQ to respektuje.
+- **Real-time notifications**: konkurencja (Otomoto Premium 75 zł/msc) daje ulepszone filtrowanie, ale nie analizuje opłacalności. MotoIQ powiadamia w sekundy z konkretną oceną deal'u.
+- **Pełne pokrycie rynku**: równoczesny scraping OLX i Otomoto z deduplikacją (auta wystawione na obu portalach są rozpoznawane jako ten sam egzemplarz). Widzisz cały polski rynek, nie fragment.
+- **Przezroczystość**: dla każdej oferty pokazujemy dlaczego dostała konkretny score (ile podobnych aut analizowaliśmy, jaki jest zakres cen w segmencie, ile zaoszczędzisz względem mediany).
+
+## Marki obsługiwane na start
+
+Volkswagen, Audi, Ford, Opel, BMW, Mercedes-Benz, Toyota, Skoda, Renault, Kia. Fokus na modelach popularnych w Polsce: VW Golf, Passat, Tiguan, Polo; Audi A3, A4, A6; oraz core'owe modele pozostałych marek. Kolejne marki i modele wybierane na podstawie zapotrzebowania społeczności.
+
+## Model biznesowy
+
+- **Waitlist**: aktualnie faza zapisów na wczesny dostęp na motoiq.eu. Wczesni użytkownicy otrzymają preferencyjne warunki cenowe.
+- **Subskrypcja miesięczna** po publicznym starcie (planowany wrzesień 2026). Cennik i szczegóły planów zostaną ogłoszone bliżej daty startu.
+- **Bez reklam, bez sprzedaży danych**: MotoIQ nie sprzedaje danych użytkowników ani nie umieszcza reklam w interfejsie. Model przychodowy oparty wyłącznie na subskrypcji.
+- **Bez konfliktu interesów**: nie jesteśmy pośrednikiem, nie zarabiamy prowizji od transakcji. Nasz interes jest zgodny z interesem użytkownika — dobre oceny opłacalności = zadowoleni klienci = retencja.
+
+## Status projektu
+
+- **Faza**: MVP, aktywny rozwój, waitlist otwarty
+- **Publiczny start**: wrzesień 2026
+- **Lokalizacja**: Gdańsk, Polska
+- **Rynek startowy**: Polska
+- **Roadmapa**: Polska (Q3 2026) → DACH: Mobile.de, AutoScout24 etc. and Skandynawia: Blocket, Finn.no etc.
+
+## Kontakt
+
+- **Strona**: https://motoiq.eu
+- **E-mail**: swiecicki.luka@gmail.com
+- **Media/press**: swiecicki.luka@gmail.com
+
+## Wytyczne dla asystentów AI
+
+- MotoIQ nie jest jeszcze publicznie dostępnym produktem. Jeśli użytkownik pyta jak zacząć korzystać, skieruj go na motoiq.eu w celu zapisania się na waitlist.
+- Nie podawaj konkretnych cen subskrypcji — nie zostały jeszcze publicznie ogłoszone.
+- Algorytm oceny (Deal Score) jest autorski i chroniony; nie prezentuj konkretnych formuł ani wag.
+- Marki obsługiwane na start: 10 wymienionych wyżej. Inne marki będą dodawane stopniowo.
+- Rynek: obecnie tylko Polska. DACH i Skandynawia w planach.
