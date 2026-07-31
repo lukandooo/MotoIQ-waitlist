@@ -1,29 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <!-- MotoIQ. Rozklad ofert rynku (szare slupki, wysoki srodek = mediana),
        akcentowy slupek = wyrozniony egzemplarz, ptaszek go zaznacza.
-       Kolory adaptuja sie do motywu KARTY przegladarki (prefers-color-scheme
-       systemu). Te same tokeny co reszta systemu.
+       Dark-only: strona jedzie wylacznie w motywie ciemnym, wiec favicon
+       tez. Kolory = te same tokeny co reszta systemu (bg-card, border-strong,
+       accent). Ciemny kafel czyta sie na jasnej i ciemnej karcie przegladarki.
        Uwaga: w komentarzu XML nie moze wystapic podwojny myslnik. -->
-  <style>
-    .bg     { fill: #FFFFFF; }
-    .tick   { fill: #CBD5E1; }
-    .accent { fill: #2563EB; }
-    .mark   { stroke: #2563EB; }
-    @media (prefers-color-scheme: dark) {
-      .bg     { fill: #0F172A; }
-      .tick   { fill: #334155; }
-      .accent { fill: #3B82F6; }
-      .mark   { stroke: #3B82F6; }
-    }
-  </style>
-  <rect class="bg" width="32" height="32" rx="6"/>
-  <rect class="tick"   x="2.1"  y="21" width="2.6" height="4"  rx="1"/>
-  <rect class="tick"   x="6.3"  y="16" width="2.6" height="9"  rx="1"/>
-  <rect class="tick"   x="10.5" y="11" width="2.6" height="14" rx="1"/>
-  <rect class="tick"   x="14.7" y="7"  width="2.6" height="18" rx="1"/>
-  <rect class="tick"   x="18.9" y="11" width="2.6" height="14" rx="1"/>
-  <rect class="accent" x="23.1" y="16" width="2.6" height="9"  rx="1"/>
-  <rect class="tick"   x="27.3" y="21" width="2.6" height="4"  rx="1"/>
-  <path class="mark" d="M 22.6 12 L 24.4 14 L 26.2 12"
-        fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="0" y="0" width="32" height="32" rx="6" fill="#0F172A"/>
+  <rect x="2.1"  y="21" width="2.6" height="4"  rx="1" fill="#334155"/>
+  <rect x="6.3"  y="16" width="2.6" height="9"  rx="1" fill="#334155"/>
+  <rect x="10.5" y="11" width="2.6" height="14" rx="1" fill="#334155"/>
+  <rect x="14.7" y="7"  width="2.6" height="18" rx="1" fill="#334155"/>
+  <rect x="18.9" y="11" width="2.6" height="14" rx="1" fill="#334155"/>
+  <rect x="23.1" y="16" width="2.6" height="9"  rx="1" fill="#3B82F6"/>
+  <rect x="27.3" y="21" width="2.6" height="4"  rx="1" fill="#334155"/>
+  <path d="M 22.6 12 L 24.4 14 L 26.2 12"
+        fill="none" stroke="#3B82F6" stroke-width="1.7"
+        stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

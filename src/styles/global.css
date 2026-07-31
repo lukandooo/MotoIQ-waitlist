@@ -1,24 +1,91 @@
+/* ============================================================================
+   MotoIQ — waitlist landing / TOKENY (dark-only)
+   ----------------------------------------------------------------------------
+   Podzbiór "słownika v1" przeniesiony z MVP (motoiq-programme). Landing jedzie
+   wyłącznie w motywie ciemnym — świadoma decyzja: brand + ICP (inżynierowie,
+   analitycy) żyją w dark mode, referencje premium (Linear, antimetal) też są
+   ciemne. Wartości = te same co tryb ciemny w MVP, więc landing i aplikacja
+   czytają się jako jeden organizm.
+
+   Przeniesiono TYLKO to, czego landing używa: powierzchnie, tekst, akcent,
+   bordery, minimalne stany, typografia, geometria, spacing, cienie, motion,
+   tło. Rarity i pełna paleta stanów zostały w MVP — to warstwa aplikacji.
+   ========================================================================== */
+
 :root {
-  --bg: #FFFFFF;
-  --bg-elev: #F8FAFC;
-  --bg-card: #F1F5F9;
-  --border: #E2E8F0;
-  --border-strong: #CBD5E1;
-  --text: #0F172A;
-  --text-dim: #475569;
-  --text-mute: #94A3B8;
-  --accent: #2563EB;
-  --accent-soft: #3B82F6;
-  --accent-dim: rgba(37, 99, 235, 0.08);
-  --accent-glow: rgba(37, 99, 235, 0.25);
-  --danger: #DC2626;
-  --success: #059669;
+  color-scheme: dark;
 
-  --font-display: 'Archivo', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  /* ── Powierzchnie — elewacja idzie w stronę światła: karty JAŚNIEJSZE od tła ── */
+  --bg:            #020617;  /* slate-950 — głęboki, nigdy czysta czerń */
+  --bg-elev:       #0B1220;  /* krok pośredni */
+  --bg-card:       #0F172A;  /* slate-900 */
 
-  --radius: 4px;
+  /* ── Bordery — jedyny separator w systemie. Cieni nie używamy do podziału. ── */
+  --border:        #1E293B;
+  --border-strong: #334155;
+
+  /* ── Tekst — nigdy czysta biel (#FFF haloi na OLED) ── */
+  --text:          #E2E8F0;  /* slate-200 */
+  --text-dim:      #94A3B8;  /* 7.6:1 */
+  --text-mute:     #64748B;  /* 4.1:1 — tylko meta dekoracyjna, nigdy treść */
+
+  /* ── Akcent (Precision Blue) — jaśniejszy na ciemnym tle (blue-500, 5.2:1) ── */
+  --accent:        #3B82F6;
+  --accent-soft:   #60A5FA;
+  --accent-dim:    rgba(59, 130, 246, 0.14);
+  --accent-glow:   rgba(59, 130, 246, 0.35);
+  --accent-data:   #93C5FD;  /* warstwa danych — odróżnia liczby od akcji */
+
+  /* ── Stany (tylko podzbiór potrzebny landingowi) ── */
+  --danger:        #F87171;
+  --success:       #34D399;
+
+  /* ── Typografia ── */
+  --font-display: 'Archivo', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --tracking-tight:   -0.01em;  /* baza body */
+  --tracking-display: -0.03em;  /* nagłówki wagi 800 */
+  --tracking-label:    0.18em;  /* .label — mono uppercase */
+
+  /* ── Geometria ── */
+  --radius-sm:   2px;
+  --radius:      4px;
+  --radius-lg:   8px;
+  --radius-pill: 999px;
+  --border-width: 1px;
+
+  /* ── Spacing ── */
+  --space-1: 4px;   --space-2: 8px;   --space-3: 12px;
+  --space-4: 16px;  --space-5: 24px;  --space-6: 32px;
+  --space-7: 48px;  --space-8: 64px;  --space-9: 96px;
+
+  /* ── Cienie — cień to ZDARZENIE (odpowiedź na akcję), nigdy dekoracja.
+        Żaden element w spoczynku nie ma cienia. ── */
+  --shadow-ring:  0 0 0 3px var(--accent-dim);            /* focus */
+  --shadow-press: inset 0 1px 2px rgba(0, 0, 0, 0.35);    /* :active */
+  --shadow-glow:  0 0 28px -8px var(--accent-glow);       /* hover CTA */
+  --shadow-pop:   0 4px 12px rgba(0, 0, 0, 0.45);         /* popover */
+
+  /* ── Tło strony — siatka + dwie plamy akcentu, na granicy widoczności ── */
+  --grid-size:  64px;
+  --grid-color: rgba(59, 130, 246, 0.05);
+  --glow-top:    rgba(59, 130, 246, 0.08);
+  --glow-bottom: rgba(59, 130, 246, 0.05);
+
+  /* ── Motion — easingi z inercją, wejście z wagą, wyjście natychmiastowe ── */
+  --ease-out:    cubic-bezier(0.16, 1, 0.30, 1);   /* expo-out — wejścia */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);   /* przełączenia stanów */
+  --ease-spring: cubic-bezier(0.34, 1.28, 0.64, 1);/* overshoot 3% */
+  --dur-instant:  90ms;
+  --dur-fast:    140ms;
+  --dur-base:    220ms;
+  --dur-slow:    420ms;
+  --stagger:      45ms;
 }
+
+/* ============================================================================
+   RESET
+   ========================================================================== */
 
 * {
   box-sizing: border-box;
@@ -31,7 +98,7 @@ html, body {
   color: var(--text);
   font-family: var(--font-display);
   font-weight: 400;
-  letter-spacing: -0.01em;
+  letter-spacing: var(--tracking-tight);
   -webkit-font-smoothing: antialiased;
   min-height: 100%;
   scroll-behavior: smooth;
@@ -39,13 +106,13 @@ html, body {
 
 body {
   background-image:
-    radial-gradient(ellipse 70% 50% at 50% -20%, rgba(37, 99, 235, 0.05), transparent 60%),
-    radial-gradient(ellipse 40% 30% at 90% 100%, rgba(37, 99, 235, 0.03), transparent 60%);
+    radial-gradient(ellipse 70% 50% at 50% -20%, var(--glow-top), transparent 60%),
+    radial-gradient(ellipse 40% 30% at 90% 100%, var(--glow-bottom), transparent 60%);
   background-attachment: fixed;
   overflow-x: hidden;
 }
 
-/* Faint grid backdrop */
+/* Subtelna siatka w tle — buduje głębię, nie rywalizuje z treścią */
 body::after {
   content: '';
   position: fixed;
@@ -53,9 +120,9 @@ body::after {
   pointer-events: none;
   z-index: 0;
   background-image:
-    linear-gradient(to right, rgba(37, 99, 235, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
-  background-size: 64px 64px;
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
   mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black, transparent 80%);
   -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black, transparent 80%);
 }
@@ -65,35 +132,44 @@ a {
   text-decoration: none;
 }
 
+/* ============================================================================
+   UTILITIES
+   ========================================================================== */
+
 .mono {
   font-family: var(--font-mono);
   font-weight: 400;
   letter-spacing: 0;
+  font-variant-numeric: tabular-nums;  /* liczby w kolumnach jak w przyrządzie */
 }
 
 .label {
   font-family: var(--font-mono);
   font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--tracking-label);
   color: var(--text-dim);
 }
 
-/* Focus ring */
+/* Focus — jeden spójny sygnał w całym systemie */
 :focus-visible {
   outline: 1px solid var(--accent);
   outline-offset: 3px;
 }
 
+::selection {
+  background: var(--accent-dim);
+  color: var(--text);
+}
+
+/* ============================================================================
+   MOTION
+   ========================================================================== */
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  html, body {
-    scroll-behavior: smooth;
+    scroll-behavior: auto !important;
   }
 }

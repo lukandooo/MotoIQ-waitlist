@@ -67,6 +67,14 @@ import '../styles/landing.css';
         <span class="hero-meta-line" aria-hidden="true"></span>
       </div>
 
+      <!-- Nic laczaca: timeline 01 -> 02 -> 03 nad kartami -->
+      <div class="how-flow" aria-hidden="true">
+        <div class="how-flow-track"><span class="how-flow-fill"></span></div>
+        <span class="how-flow-node n1"></span>
+        <span class="how-flow-node n2"></span>
+        <span class="how-flow-node n3 live"></span>
+      </div>
+
       <div class="how-grid">
         <div class="how-step">
           <span class="how-step-num">KROK 01</span>
@@ -123,10 +131,91 @@ import '../styles/landing.css';
       </div>
     </section>
 
+    <!-- Algorytm: wizualny dowod dzialania (wykres cena / przebieg) -->
+    <section class="algo" id="algo">
+      <div class="algo-meta label">
+        <span>/ 03</span>
+        <span>ALGORYTM</span>
+        <span class="hero-meta-line" aria-hidden="true"></span>
+      </div>
+
+      <div class="algo-grid">
+        <div class="algo-copy">
+          <h2 class="algo-title">
+            Tysiące ofert.<br/>
+            <em>Jedna linia wartości.</em>
+          </h2>
+          <p class="algo-desc">
+            Algorytm zbiera wszystkie ogłoszenia danego modelu i wylicza realną
+            wartość dla każdego przebiegu. Każda kropka to jedno ogłoszenie.
+            Te pod krzywą to okazje, które MotoIQ wyłapuje za Ciebie.
+          </p>
+
+          <div class="algo-stat">
+            <span class="algo-stat-num mono" id="algo-count" data-final="20000">0</span>
+            <span class="algo-stat-label label">ofert analizowanych dziennie</span>
+          </div>
+
+          <ul class="algo-legend" aria-hidden="true">
+            <li><span class="dot-key grey"></span> oferta</li>
+            <li><span class="dot-key deal"></span> okazja (pod krzywą)</li>
+            <li><span class="dot-key line"></span> wartość godziwa</li>
+          </ul>
+        </div>
+
+        <div class="algo-chart">
+          <svg viewBox="0 0 720 340" width="100%" preserveAspectRatio="xMidYMid meet"
+               role="img" aria-label="Wykres średniej ceny auta względem przebiegu z rozrzutem ofert">
+            <defs>
+              <linearGradient id="algoArea" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="rgba(59,130,246,.28)"/>
+                <stop offset="1" stop-color="rgba(59,130,246,0)"/>
+              </linearGradient>
+              <clipPath id="algoClip"><rect id="algoClipRect" x="64" y="0" width="0" height="340"/></clipPath>
+            </defs>
+
+            <line class="algo-gridline" x1="64" y1="72"  x2="696" y2="72"/>
+            <line class="algo-gridline" x1="64" y1="163" x2="696" y2="163"/>
+            <line class="algo-gridline" x1="64" y1="254" x2="696" y2="254"/>
+
+            <g clip-path="url(#algoClip)">
+              <path class="algo-area" d="M64,72 L127,108 L190,138 L254,163 L317,189 L380,211 L443,232 L506,251 L570,265 L696,287 L696,300 L64,300 Z"/>
+              <path class="algo-line" d="M64,72 L127,108 L190,138 L254,163 L317,189 L380,211 L443,232 L506,251 L570,265 L696,287"/>
+            </g>
+
+            <circle class="algo-dot grey" cx="112" cy="92"  r="4"/>
+            <circle class="algo-dot grey" cx="150" cy="122" r="4"/>
+            <circle class="algo-dot deal" cx="182" cy="158" r="4.5"/>
+            <circle class="algo-dot grey" cx="236" cy="150" r="4"/>
+            <circle class="algo-dot grey" cx="290" cy="176" r="4"/>
+            <circle class="algo-dot deal" cx="322" cy="205" r="4.5"/>
+            <circle class="algo-dot grey" cx="360" cy="200" r="4"/>
+            <circle class="algo-dot grey" cx="410" cy="222" r="4"/>
+            <circle class="algo-dot hot"  cx="440" cy="252" r="6"/>
+            <circle class="algo-dot grey" cx="486" cy="243" r="4"/>
+            <circle class="algo-dot grey" cx="536" cy="258" r="4"/>
+            <circle class="algo-dot deal" cx="584" cy="284" r="4.5"/>
+            <circle class="algo-dot grey" cx="636" cy="278" r="4"/>
+
+            <!-- Slabe oferty: szare kropki nad linia (przewartosciowane) -->
+            <circle class="algo-dot grey" cx="210" cy="118" r="4"/>
+            <circle class="algo-dot grey" cx="350" cy="172" r="4"/>
+            <circle class="algo-dot grey" cx="470" cy="212" r="4"/>
+            <circle class="algo-dot grey" cx="600" cy="244" r="4"/>
+
+            <text class="algo-axlab" x="64"  y="326">0 km</text>
+            <text class="algo-axlab" x="330" y="326">125 000</text>
+            <text class="algo-axlab" x="636" y="326">250 000</text>
+            <text class="algo-axlab" x="64"  y="60" >cena · pln</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
     <!-- Marki: TEST sekcja, dwa warianty do porównania -->
     <section class="brands">
       <div class="brands-meta label">
-        <span>/ 03</span>
+        <span>/ 04</span>
         <span>MARKI W BAZIE</span>
         <span class="hero-meta-line" aria-hidden="true"></span>
       </div>
@@ -188,9 +277,9 @@ import '../styles/landing.css';
     </section>
 
     <!-- Wycena -->
-    <section class="wycena">
+    <section class="wycena" id="wycena">
       <div class="wycena-meta label">
-        <span>/ 04</span>
+        <span>/ 05</span>
         <span>WYCENA</span>
         <span class="hero-meta-line" aria-hidden="true"></span>
       </div>
@@ -224,27 +313,27 @@ import '../styles/landing.css';
           </div>
           <div class="wycena-demo-row">
             <span class="wycena-demo-label">Marka</span>
-            <span class="wycena-demo-value">Volkswagen</span>
+            <span class="wycena-demo-value scramble" data-final="Volkswagen">Volkswagen</span>
           </div>
           <div class="wycena-demo-row">
             <span class="wycena-demo-label">Model</span>
-            <span class="wycena-demo-value">Passat B8</span>
+            <span class="wycena-demo-value scramble" data-final="Passat B8">Passat B8</span>
           </div>
           <div class="wycena-demo-row">
             <span class="wycena-demo-label">Rocznik</span>
-            <span class="wycena-demo-value">2019</span>
+            <span class="wycena-demo-value scramble" data-final="2019">2019</span>
           </div>
           <div class="wycena-demo-row">
             <span class="wycena-demo-label">Przebieg</span>
-            <span class="wycena-demo-value">112 000 km</span>
+            <span class="wycena-demo-value scramble" data-final="112 000 km">112 000 km</span>
           </div>
           <div class="wycena-demo-row">
             <span class="wycena-demo-label">Sprzedawca</span>
-            <span class="wycena-demo-value">Osoba prywatna</span>
+            <span class="wycena-demo-value scramble" data-final="Osoba prywatna">Osoba prywatna</span>
           </div>
           <div class="wycena-demo-result">
             <span class="wycena-demo-result-label label">Realny zakres cen</span>
-            <span class="wycena-demo-result-value mono">64 900 <span class="wycena-demo-sep">–</span> 71 200 <span class="wycena-demo-currency">PLN</span></span>
+            <span class="wycena-demo-result-value mono"><span id="wyc-lo">0</span> <span class="wycena-demo-sep">do</span> <span id="wyc-hi">0</span> <span class="wycena-demo-currency">PLN</span></span>
           </div>
         </div>
       </div>
@@ -253,7 +342,7 @@ import '../styles/landing.css';
     <!-- CTA section -->
     <section class="cta">
       <div class="cta-meta label">
-        <span>/ 05</span>
+        <span>/ 06</span>
         <span>WCZESNY DOSTĘP</span>
         <span class="hero-meta-line" aria-hidden="true"></span>
       </div>
@@ -456,5 +545,183 @@ import '../styles/landing.css';
         btn.querySelector('.submit-label').textContent = 'Zapisz się';
       }
     });
+  </script>
+
+  <script is:inline>
+    // Wykres algorytmu: animacja startuje dopiero gdy sekcja wjezdza w kadr.
+    (function () {
+      const algo = document.getElementById('algo');
+      if (!algo) return;
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Kropki-oferty: opoznienie wg pozycji X — pojawiaja sie w miare jak linia sunie.
+      algo.querySelectorAll('.algo-dot').forEach((d) => {
+        const cx = parseFloat(d.getAttribute('cx'));
+        const delay = Math.round(((cx - 64) / 632) * 1800) + 300;
+        d.style.setProperty('--d', delay + 'ms');
+      });
+
+      const countEl = document.getElementById('algo-count');
+      const FINAL = parseInt(countEl.dataset.final, 10);
+      const fmt = (n) => n.toLocaleString('pl-PL');
+      function countUp() {
+        if (reduce) { countEl.textContent = fmt(FINAL) + '+'; return; }
+        const dur = 1600, t0 = performance.now();
+        function tick(now) {
+          const p = Math.min((now - t0) / dur, 1);
+          const e = 1 - Math.pow(1 - p, 3);
+          countEl.textContent = fmt(Math.round(FINAL * e));
+          if (p < 1) requestAnimationFrame(tick);
+          else countEl.textContent = fmt(FINAL) + '+';
+        }
+        requestAnimationFrame(tick);
+      }
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          algo.classList.add('play');
+          countUp();
+          io.disconnect();
+        });
+      }, { threshold: 0.35 });
+      io.observe(algo);
+    })();
+  </script>
+
+  <script is:inline>
+    // Sekcja 02: stagger kart + nic laczaca odpalane przy wejsciu w kadr.
+    (function () {
+      const how = document.querySelector('.how');
+      const grid = document.querySelector('.how-grid');
+      if (!how || !grid) return;
+      how.classList.add('is-armed');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          how.classList.add('play');
+          io.disconnect();
+        });
+      }, { threshold: 0.4 });
+      io.observe(grid);
+    })();
+  </script>
+
+  <script is:inline>
+    // Sekcja 06 (CTA): stagger bulletow + ticki jako pasek postepu + blysk sukcesu.
+    (function () {
+      const cta = document.querySelector('.cta');
+      const form = document.getElementById('waitlist');
+      const ticksWrap = document.querySelector('.ticks');
+      if (!cta || !form || !ticksWrap) return;
+      const ticks = Array.from(ticksWrap.querySelectorAll('span'));
+      const N = ticks.length;
+
+      // Stagger bulletow przy wejsciu w kadr
+      cta.classList.add('is-armed');
+      const bullets = cta.querySelector('.cta-bullets') || cta;
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          cta.classList.add('play');
+          io.disconnect();
+        });
+      }, { threshold: 0.3 });
+      io.observe(bullets);
+
+      // Ticki jako pasek postepu: ile wymaganych pol jest poprawnie wypelnionych
+      const required = ['name', 'email', 'phone'];
+      let doneState = false;
+      function fieldValid(name) {
+        const el = form.elements[name];
+        if (!el) return false;
+        if (el.type === 'email') return el.value.trim() !== '' && el.checkValidity();
+        return el.value.trim() !== '';
+      }
+      function updateProgress() {
+        if (doneState) return;
+        const count = required.filter(fieldValid).length;
+        const lit = Math.round((count / required.length) * N);
+        ticks.forEach((t, i) => t.classList.toggle('lit', i < lit));
+      }
+      form.addEventListener('input', updateProgress);
+
+      // Sukces: wszystkie ticki niebieskie + blysk, potem powrot do stanu ambient
+      const msg = document.getElementById('msg');
+      if (msg) {
+        new MutationObserver(() => {
+          if (!msg.classList.contains('msg-ok')) return;
+          doneState = true;
+          ticks.forEach((t) => t.classList.remove('lit'));
+          ticksWrap.classList.add('done', 'flash');
+          setTimeout(() => ticksWrap.classList.remove('flash'), 700);
+          setTimeout(() => {
+            ticksWrap.classList.remove('done');
+            doneState = false;
+            updateProgress();
+          }, 3000);
+        }).observe(msg, { attributes: true, attributeFilter: ['class'] });
+      }
+    })();
+  </script>
+
+  <script is:inline>
+    // Sekcja 05 (Wycena): count-up ceny przy wejsciu w kadr + scramble wartosci.
+    (function () {
+      const wyc = document.getElementById('wycena');
+      if (!wyc) return;
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const lo = document.getElementById('wyc-lo');
+      const hi = document.getElementById('wyc-hi');
+      const LO = 64900, HI = 71200;
+      const fmt = (n) => n.toLocaleString('pl-PL');
+
+      function countUp() {
+        const rv = wyc.querySelector('.wycena-demo-result-value');
+        if (reduce) { lo.textContent = fmt(LO); hi.textContent = fmt(HI); return; }
+        const dur = 1500, t0 = performance.now();
+        function tick(now) {
+          const p = Math.min((now - t0) / dur, 1);
+          const e = 1 - Math.pow(1 - p, 3);
+          lo.textContent = fmt(Math.round(LO * e));
+          hi.textContent = fmt(Math.round(HI * e));
+          if (p < 1) requestAnimationFrame(tick);
+          else {
+            lo.textContent = fmt(LO);
+            hi.textContent = fmt(HI);
+            rv.classList.add('lock');
+            setTimeout(() => rv.classList.remove('lock'), 900);
+          }
+        }
+        requestAnimationFrame(tick);
+      }
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          countUp();
+          io.disconnect();
+        });
+      }, { threshold: 0.3 });
+      io.observe(wyc.querySelector('.wycena-demo'));
+
+      // Scramble wartosci specyfikacji na hover
+      const CH = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#%@/<>*';
+      function scramble(el) {
+        const final = el.dataset.final, len = final.length;
+        let frame = 0; const steps = 28;
+        clearInterval(el._iv);
+        el._iv = setInterval(() => {
+          let out = '';
+          for (let i = 0; i < len; i++) {
+            if (final[i] === ' ') { out += ' '; continue; }
+            out += (i < (frame / steps) * len) ? final[i] : CH[Math.floor(Math.random() * CH.length)];
+          }
+          el.textContent = out; frame++;
+          if (frame > steps) { clearInterval(el._iv); el.textContent = final; }
+        }, 42);
+      }
+      wyc.querySelectorAll('.scramble').forEach((el) => el.addEventListener('mouseenter', () => scramble(el)));
+    })();
   </script>
 </Base>

@@ -92,7 +92,7 @@
   align-items: center;
   gap: 18px;
   flex-wrap: wrap;
-  animation: rise 0.6s ease-out both;
+  animation: rise 700ms var(--ease-out) both;
 }
 
 .hero-meta-line {
@@ -108,7 +108,8 @@
   font-size: clamp(40px, 6.5vw, 80px);
   line-height: 0.98;
   letter-spacing: -0.035em;
-  animation: rise 0.7s ease-out 0.1s both;
+  text-wrap: balance;
+  animation: rise 760ms var(--ease-out) 0.16s both;
 }
 
 .headline em {
@@ -123,7 +124,7 @@
   color: var(--text-dim);
   max-width: 46ch;
   padding-bottom: 8px;
-  animation: rise 0.7s ease-out 0.2s both;
+  animation: rise 760ms var(--ease-out) 0.34s both;
 }
 
 .lede .hl {
@@ -139,7 +140,7 @@
   gap: 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  animation: rise 0.7s ease-out 0.4s both;
+  animation: rise 800ms var(--ease-out) 0.54s both;
 }
 
 /* values li and cta-bullets li defined below with hover effects */
@@ -180,6 +181,91 @@
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
+}
+
+/* Nic laczaca: timeline nad kartami (osobny element, bo how-grid ma overflow:hidden) */
+.how-flow {
+  position: relative;
+  height: 8px;
+  margin-bottom: 24px;
+}
+
+.how-flow-track {
+  position: absolute;
+  top: 3px;
+  left: 16.66%;
+  right: 16.66%;
+  height: 1px;
+  background: var(--border-strong);
+  overflow: hidden;
+}
+
+.how-flow-fill {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, var(--accent), var(--accent-soft));
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.how-flow-node {
+  position: absolute;
+  top: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--border-strong);
+  transform: translateX(-50%);
+  transition: background-color 320ms var(--ease-out), box-shadow 320ms var(--ease-out);
+}
+
+.how-flow-node.n1 { left: 16.66%; }
+.how-flow-node.n2 { left: 50%; }
+.how-flow-node.n3 { left: 83.33%; }
+
+.how-flow-node.live::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  opacity: 0;
+}
+
+/* Stan uzbrojony (dodawany przez JS) chowa karty przed wejsciem w kadr.
+   Bez JS karty zostaja widoczne. */
+.how.is-armed .how-step {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+/* Cala os i blok kart pojawiaja sie przy scrollu, a nie stoja pusto */
+.how.is-armed .how-flow,
+.how.is-armed .how-grid {
+  opacity: 0;
+}
+
+/* Animacje sekcji 02 odpalane klasa .play */
+.how.play .how-flow { animation: how-fade 460ms var(--ease-out) both; }
+.how.play .how-grid { animation: how-fade 600ms var(--ease-out) both; }
+.how.play .how-step { animation: how-rise 820ms var(--ease-out) both; }
+.how.play .how-step:nth-child(1) { animation-delay: 150ms; }
+.how.play .how-step:nth-child(2) { animation-delay: 450ms; }
+.how.play .how-step:nth-child(3) { animation-delay: 750ms; }
+
+.how.play .how-flow-fill { animation: how-grow 1400ms var(--ease-out) 200ms forwards; }
+.how.play .how-flow-node { background-color: var(--accent); box-shadow: 0 0 10px var(--accent); }
+.how.play .how-flow-node.n1 { transition-delay: 300ms; }
+.how.play .how-flow-node.n2 { transition-delay: 900ms; }
+.how.play .how-flow-node.n3 { transition-delay: 1500ms; }
+.how.play .how-flow-node.live::after { animation: how-ping 1900ms ease-out 1700ms infinite; }
+
+@keyframes how-rise { to { opacity: 1; transform: translateY(0); } }
+@keyframes how-fade { to { opacity: 1; } }
+@keyframes how-grow { to { transform: scaleX(1); } }
+@keyframes how-ping {
+  0%   { opacity: 0.6; transform: scale(0.6); }
+  70%, 100% { opacity: 0; transform: scale(2.4); }
 }
 
 /* how-step styles defined below with hover effects */
@@ -285,7 +371,9 @@
   border-radius: 2px;
   color: var(--text-dim);
   background: var(--bg-card);
-  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  transition: border-color var(--dur-fast) var(--ease-out),
+              color var(--dur-fast) var(--ease-out),
+              background var(--dur-fast) var(--ease-out);
   cursor: default;
 }
 
@@ -329,6 +417,12 @@
   height: 100%;
   width: auto;
   object-fit: contain;
+  /* Każde logo (kolorowe lub ciemne) sprowadzone do jednej białej sylwetki —
+     brightness(0) czyści do czerni, invert(1) odwraca na biel. Spójny,
+     monochromatyczny pasek marek na ciemnym tle. Opacity zdejmuje ostrość
+     czystej bieli; podbij do 1 jeśli chcesz mocniej. */
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
 }
 
 /* Każda marka ma własną klasę. Zmień wartość height żeby powiększyć lub
@@ -351,9 +445,162 @@
   height: 100%;
 }
 
+/* BMW to jedyny wyjatek: kolorowy roundel (niebiesko-bialy) czyta sie na
+   ciemnym tle bez pomocy, wiec wylaczamy dla niego bielenie z .brand-tile-m img. */
+.brand-bmw img {
+  filter: none;
+  opacity: 1;
+}
+
 @keyframes marquee-scroll {
   from { transform: translateZ(0) translateX(0); }
   to   { transform: translateZ(0) translateX(calc(-1 * var(--loop-distance))); }
+}
+
+/* ── Algorytm (wykres cena / przebieg) ───────── */
+.algo {
+  padding-top: 80px;
+}
+
+.algo-meta {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+.algo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 40px 56px;
+  align-items: center;
+}
+
+.algo-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(28px, 3.4vw, 44px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.algo-title em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.algo-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-dim);
+  max-width: 44ch;
+  margin-top: 18px;
+}
+
+.algo-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.algo-stat-num {
+  font-size: clamp(34px, 4vw, 46px);
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.algo-stat-label {
+  max-width: 12ch;
+  line-height: 1.3;
+}
+
+.algo-legend {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  margin-top: 24px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.algo-legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot-key {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-key.grey { background: var(--text-mute); }
+.dot-key.deal { background: var(--success); }
+.dot-key.line { width: 16px; height: 2px; border-radius: 0; background: var(--accent); }
+
+/* Wykres SVG */
+.algo-chart svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.algo-gridline { stroke: var(--border); stroke-width: 1; }
+
+.algo-axlab {
+  fill: var(--text-mute);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.algo-area { fill: url(#algoArea); }
+
+.algo-line {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 5px var(--accent-glow));
+  stroke-dasharray: 690;
+  stroke-dashoffset: 690;
+}
+
+.algo-dot {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(0);
+}
+
+.algo-dot.grey { fill: var(--text-mute); }
+.algo-dot.deal { fill: var(--success); }
+.algo-dot.hot  { fill: var(--accent); stroke: var(--accent-soft); stroke-width: 1.5; }
+
+#algoClipRect { width: 0; }
+
+/* Animacje odpalane klasą .play (dodawaną przez IntersectionObserver) */
+.algo.play .algo-line { animation: algo-draw 2000ms var(--ease-out) 200ms forwards; }
+.algo.play #algoClipRect { animation: algo-reveal 2000ms var(--ease-out) 200ms forwards; }
+.algo.play .algo-dot { animation: algo-pop 420ms var(--ease-out) var(--d, 0ms) forwards; }
+
+@keyframes algo-draw { to { stroke-dashoffset: 0; } }
+@keyframes algo-reveal { to { width: 640px; } }
+@keyframes algo-pop { to { opacity: 1; transform: scale(1); } }
+
+@media (max-width: 860px) {
+  .algo-grid { grid-template-columns: 1fr; gap: 28px; }
 }
 
 /* ── Wycena section ─────────────────── */
@@ -470,7 +717,11 @@
   color: var(--accent);
   letter-spacing: -0.01em;
   white-space: nowrap;
+  transition: text-shadow 500ms ease;
 }
+
+/* Lock-in glow: cena rozswietla sie w chwili zatrzasniecia count-upu */
+.wycena-demo-result-value.lock { text-shadow: 0 0 12px var(--accent-glow); }
 
 .wycena-demo-sep {
   color: var(--text-mute);
@@ -555,6 +806,16 @@
   box-shadow: 0 0 8px var(--accent-glow);
 }
 
+/* Stagger wejscia bulletow (tylko opacity, zeby nie kolidowac z hover translateX) */
+.cta.is-armed .cta-bullets li { opacity: 0; }
+.cta.play .cta-bullets li { animation: cta-fade 700ms var(--ease-out) both; }
+.cta.play .cta-bullets li:nth-child(1) { animation-delay: 150ms; }
+.cta.play .cta-bullets li:nth-child(2) { animation-delay: 410ms; }
+.cta.play .cta-bullets li:nth-child(3) { animation-delay: 670ms; }
+.cta.play .cta-bullets li:nth-child(4) { animation-delay: 930ms; }
+
+@keyframes cta-fade { to { opacity: 1; } }
+
 /* ── Instrument card (form) ─────────── */
 .instrument {
   background: var(--bg-card);
@@ -597,22 +858,70 @@
 
 .ticks span {
   width: 2px;
-  background: var(--text-mute);
+  background-color: var(--text-mute);
   display: block;
+  animation: tick-run 2.45s linear infinite;
+  transition: background-color 300ms var(--ease-out), box-shadow 300ms var(--ease-out);
 }
 
-.ticks span:nth-child(1) { height: 5px; }
-.ticks span:nth-child(2) { height: 7px; }
-.ticks span:nth-child(3) { height: 9px; }
-.ticks span:nth-child(4) { height: 12px; }
-.ticks span:nth-child(5) { height: 14px; background: var(--accent); }
-.ticks span:nth-child(6) { height: 11px; }
-.ticks span:nth-child(7) { height: 6px; }
+/* Kazdy tick zapala sie tylko w swoim slocie (1/7 cyklu), przesuniete o slot,
+   wiec w danej chwili niebieski jest dokladnie jeden i przesuwa sie po kolei. */
+.ticks span:nth-child(1) { height: 5px;  animation-delay: 0s; }
+.ticks span:nth-child(2) { height: 7px;  animation-delay: 0.35s; }
+.ticks span:nth-child(3) { height: 9px;  animation-delay: 0.70s; }
+.ticks span:nth-child(4) { height: 12px; animation-delay: 1.05s; }
+.ticks span:nth-child(5) { height: 14px; animation-delay: 1.40s; }
+.ticks span:nth-child(6) { height: 11px; animation-delay: 1.75s; }
+.ticks span:nth-child(7) { height: 6px;  animation-delay: 2.10s; }
+
+/* Tick zapalony: pasek postepu wypelniania formularza */
+.ticks span.lit {
+  background-color: var(--accent);
+  box-shadow: 0 0 6px var(--accent-glow);
+  animation: none;
+}
+
+/* Sukces: wszystkie ticki niebieskie */
+.ticks.done span {
+  background-color: var(--accent);
+  box-shadow: 0 0 6px var(--accent-glow);
+  animation: none;
+}
+
+.ticks.flash { animation: tick-flash 600ms var(--ease-out); }
+
+@keyframes tick-run {
+  0%, 13%   { background-color: var(--accent);    box-shadow: 0 0 6px var(--accent-glow); }
+  14%, 100% { background-color: var(--text-mute); box-shadow: 0 0 0 rgba(0, 0, 0, 0); }
+}
+
+@keyframes tick-flash {
+  0%, 100% { transform: scale(1); }
+  40%      { transform: scale(1.14); }
+}
 
 /* ── Form fields ─────────────────────── */
 .form { display: flex; flex-direction: column; gap: 20px; }
 
-.field { display: flex; flex-direction: column; gap: 8px; }
+.field { display: flex; flex-direction: column; gap: 8px; position: relative; }
+
+/* Akcentowe podkreslenie wjezdzajace od lewej na focus */
+.field::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent-glow);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 280ms var(--ease-out);
+  pointer-events: none;
+}
+
+.field:focus-within::after { transform: scaleX(1); }
 
 .field input,
 .field select {
@@ -623,7 +932,7 @@
   font-family: var(--font-display);
   font-size: 18px;
   padding: 10px 0;
-  transition: border-color 0.2s;
+  transition: border-color var(--dur-fast) var(--ease-out);
   width: 100%;
 }
 
@@ -634,7 +943,7 @@
 .field input:focus,
 .field select:focus {
   outline: none;
-  border-color: var(--accent);
+  border-color: var(--border-strong);
 }
 
 .field input:invalid:not(:placeholder-shown) {
@@ -753,9 +1062,9 @@
 .footnote-email {
   color: var(--text-dim);
   text-decoration: none;
-  transition: color 0.2s;
   border-bottom: 1px solid transparent;
-  transition: color 0.2s, border-color 0.2s;
+  transition: color var(--dur-fast) var(--ease-out),
+              border-color var(--dur-fast) var(--ease-out);
 }
 
 .footnote-email:hover {
@@ -771,12 +1080,14 @@
   flex-direction: column;
   gap: 16px;
   border: 1px solid transparent;
-  transition: border-color 0.25s ease;
+  transition: border-color var(--dur-fast) var(--ease-out),
+              box-shadow var(--dur-fast) var(--ease-out);
   cursor: default;
 }
 
 .how-step:hover {
   border-color: var(--accent);
+  box-shadow: inset 0 0 0 999px var(--accent-dim);
 }
 
 .how-step-num {
@@ -826,8 +1137,11 @@
   border: 1px solid var(--border-strong);
   border-radius: 2px;
   color: var(--text-dim);
-  transition: transform 0.2s ease, background 0.2s ease,
-              border-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+  transition: transform var(--dur-fast) var(--ease-out),
+              background var(--dur-fast) var(--ease-out),
+              border-color var(--dur-fast) var(--ease-out),
+              color var(--dur-fast) var(--ease-out),
+              opacity var(--dur-fast) var(--ease-out);
   cursor: default;
 }
 
@@ -857,7 +1171,7 @@
   align-items: baseline;
   padding: 24px 32px 24px 0;
   border-right: 1px solid var(--border);
-  transition: border-bottom-color 0.2s ease;
+  transition: border-bottom-color var(--dur-fast) var(--ease-out);
   cursor: default;
   border-bottom: 2px solid transparent;
 }
@@ -884,7 +1198,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  transition: transform 0.2s ease;
+  transition: transform var(--dur-fast) var(--ease-out);
   cursor: default;
 }
 
@@ -895,7 +1209,8 @@
 .cta-bullets li:hover .cta-bullet-dot {
   box-shadow: 0 0 14px var(--accent-glow);
   transform: scale(1.3);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform var(--dur-fast) var(--ease-out),
+              box-shadow var(--dur-fast) var(--ease-out);
 }
 
 /* ── Animation ─────────────────────── */
@@ -950,6 +1265,9 @@
     grid-template-columns: 1fr;
     gap: 1px;
   }
+
+  /* Timeline poziomy nie ma sensu przy pionowym stacku kart */
+  .how-flow { display: none; }
 
   .expansion {
     flex-direction: column;
