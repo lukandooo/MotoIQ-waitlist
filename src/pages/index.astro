@@ -5,8 +5,8 @@ import '../styles/landing.css';
 
 <Base
   title="MotoIQ"
-  description="MotoIQ przeszukuje Otomoto i sprzedajemy.pl, ocenia każde ogłoszenie i zwraca tylko te warte uwagi. Sprawdź też realną wartość konkretnego auta w sekundę dzięki Wycenie."
-  ogDescription="MotoIQ przeszukuje Otomoto i sprzedajemy.pl, ocenia każde ogłoszenie i zwraca tylko te warte uwagi."
+  description="MotoIQ zbiera ogłoszenia z Otomoto i sprzedajemy.pl w jednym miejscu, robi wstępną weryfikację każdej oferty i układa je od najbezpieczniejszej. Sprawdź też realną wartość rynkową konkretnego modelu dzięki Wycenie."
+  ogDescription="Ogłoszenia z wielu portali w jednym miejscu, wstępnie sprawdzone i ułożone od najbezpieczniejszej oferty."
 >
   <main class="page">
 
@@ -29,39 +29,83 @@ import '../styles/landing.css';
         <span>/ 01</span>
         <span>WCZESNY DOSTĘP · PL</span>
         <span class="hero-meta-line" aria-hidden="true"></span>
-        <span>DACH · SK · UK WKRÓTCE</span>
       </div>
 
       <h1 class="headline">
-        Rynek aut ma<br/>
-        więcej <em>danych</em><br/>
-        niż <em>czasu</em> na nie.
+        Najlepsze oferty<br/>
+        podane <em>na tacy</em><br/>
+        w kilka minut
       </h1>
 
-      <p class="lede">
-        Każdego dnia na Otomoto i sprzedajemy.pl pojawiają się tysiące nowych ogłoszeń.
-        MotoIQ przegląda je za Ciebie non stop, ocenia każde pod względem
-        realnej wartości i zwraca Ci tylko te, które rzeczywiście warto zobaczyć.
-        Ty patrzysz na dziesięć najlepszych ofert, nie na wszystkie tysiące.
-        Oszczędzasz godziny i masz szansę zareagować pierwszy zanim oferta zniknie.
-      </p>
+      <div class="lede">
+        <p>
+          Zbieramy ogłoszenia z przeróżnych portali motoryzacyjnych w jedno miejsce.
+          Każde wczytujemy w całości i poddajemy wstępnej weryfikacji: wyłapujemy
+          czerwone flagi, takie jak historia wypadku, przebieg niepasujący do wieku
+          auta czy podejrzanie niska cena.
+        </p>
+        <p>
+          Dostajesz jedną listę, ułożoną od najbezpieczniejszej oferty, z informacją,
+          co nas zaniepokoiło przy każdej. Zamiast godzin przeglądania, kilka minut
+          na oferty, które naprawdę warto sprawdzić.
+        </p>
+      </div>
     </section>
 
     <!-- Value props strip -->
     <ul class="values mono" aria-label="Co dostajesz">
       <li>
         <span class="values-num">01</span>
-        <span class="values-text">Powiadomienia o nowych okazjach w sekundy od ich pojawienia się na rynku.</span>
+        <span class="values-text">Oferty z przeróżnych portali w jednym miejscu. Bez skakania między kartami.</span>
       </li>
       <li>
         <span class="values-num">02</span>
-        <span class="values-text">Zaawansowany algorytm wylicza które ogłoszenia są najbardziej opłacalne i tylko te zwraca.</span>
+        <span class="values-text">Każde ogłoszenie przechodzi wstępną weryfikację: czerwone flagi, podejrzane dane, kompletność informacji.</span>
       </li>
       <li>
         <span class="values-num">03</span>
-        <span class="values-text">Filtrujesz po marce, budżecie i lokalizacji. Sam narzucasz swoje wymagania, reszta dzieje się automatycznie.</span>
+        <span class="values-text">Najpierw oferty bez zastrzeżeń, potem reszta. Kolejność, która oszczędza godziny.</span>
       </li>
     </ul>
+
+    <!-- Dla kogo -->
+    <section class="audience">
+      <div class="audience-grid">
+        <div class="audience-copy">
+          <span class="audience-label label">Dla kogo</span>
+          <h2 class="audience-title">
+            Dla każdego, kto szuka auta, a nie ma czasu na setki ofert
+            i&nbsp;<em>nieuczciwych sprzedawców.</em>
+          </h2>
+          <p class="audience-desc">
+            Bez przekopywania się przez ogłoszenia i bez stresu o wadliwe pojazdy
+            czy nieuczciwych handlarzy. Wszystko masz w jednym miejscu, a najlepsze
+            oferty, godne zaufania, dostajesz ładnie podane na tacy.
+          </p>
+        </div>
+
+        <div class="audience-card">
+          <div class="audience-card-head">
+            <span class="label">Co zyskujesz</span>
+          </div>
+          <div class="audience-row">
+            <span class="audience-key">Czas</span>
+            <span class="audience-value">Kilka minut zamiast godzin przeglądania ogłoszeń.</span>
+          </div>
+          <div class="audience-row">
+            <span class="audience-key">Nerwy</span>
+            <span class="audience-value">Czerwone flagi widzisz, zanim zadzwonisz do sprzedającego.</span>
+          </div>
+          <div class="audience-row">
+            <span class="audience-key">Dojazdy</span>
+            <span class="audience-value">Jedziesz oglądać tylko te auta, które zasługują na tę szansę.</span>
+          </div>
+          <p class="audience-note">
+            Wstępna weryfikacja nie zastępuje oględzin ani stacji diagnostycznej.
+          </p>
+        </div>
+      </div>
+    </section>
 
     <!-- How it works -->
     <section class="how">
@@ -82,37 +126,39 @@ import '../styles/landing.css';
       <div class="how-grid">
         <div class="how-step">
           <span class="how-step-num">KROK 01</span>
-          <h3 class="how-step-title">Twoje wytyczne</h3>
+          <h3 class="how-step-title">Zbieramy wszystkie dane</h3>
           <p class="how-step-desc">
-            Oprócz typowych wytycznych jak marka, model, budżet, lokalizacja, oferujemy niestandardowe wytyczne.
-            Od koloru, mocy silnika, po pierwszego właściciela, fakturę VAT, autoryzowanego dealera i więcej.
-            Ustawiasz raz, MotoIQ pracuje
-            w tle non stop, dzień i noc.
+            Pobieramy ogłoszenia z sieci i wczytujemy każde w całości. Bierzemy
+            wszystkie dane, także te, których nie widać na pierwszy rzut oka
+            w ogłoszeniu, a które mają znaczenie przy ocenie auta. Sprowadzamy
+            je do jednego, spójnego formatu, żeby oferty z różnych portali dało
+            się uczciwie porównać.
           </p>
-          <span class="how-step-time">2 minuty setupu</span>
+          <span class="how-step-time">pełny obraz oferty</span>
         </div>
 
         <div class="how-step">
           <span class="how-step-num">KROK 02</span>
           <h3 class="how-step-title">Zaawansowany, autorski algorytm</h3>
           <p class="how-step-desc">
-            Każde ogłoszenie spełniające Twoje kryteria przechodzi przez nasz
-            autorski wzór matematyczny, który bierze pod uwagę markę, model,
-            rocznik, przebieg i dziesiątki innych zależności jednocześnie.
-            Widzisz tylko te oferty, które wypadają najlepiej.
+            Najpierw rygorystyczna filtracja: do wyceny trafia tylko to, co da się
+            uczciwie porównać. Potem do pracy wchodzi nasz zaawansowany, autorski
+            algorytm matematyczny, zbudowany od podstaw. Zestawia każde auto
+            z najbardziej podobnymi egzemplarzami na rynku.
           </p>
-          <span class="how-step-time">w czasie rzeczywistym</span>
+          <span class="how-step-time">autorski algorytm</span>
         </div>
 
         <div class="how-step">
           <span class="how-step-num">KROK 03</span>
-          <h3 class="how-step-title">Powiadomienie w czasie rzeczywistym</h3>
+          <h3 class="how-step-title">Sortowanie, które trzyma balans</h3>
           <p class="how-step-desc">
-            Gdy znajdziemy ogłoszenie warte uwagi, które spełnia Twoje wytyczne,
-            dostajesz od razu powiadomienie. Działasz pierwszy, zanim ktoś inny
-            zdąży zadzwonić.
+            Na koniec wszystkie zebrane dane składamy w jedną ocenę. Sprawdzamy,
+            co się zgadza, co budzi wątpliwości i czego brakuje, i wyciągamy
+            z tego wnioski. Parametry wyważyliśmy tak, żeby na górze lądowały
+            oferty z najmniejszą liczbą zastrzeżeń. Ty dostajesz gotową listę.
           </p>
-          <span class="how-step-time">przewaga czasowa</span>
+          <span class="how-step-time">gotowa lista</span>
         </div>
       </div>
 
@@ -146,24 +192,30 @@ import '../styles/landing.css';
       <div class="algo-grid">
         <div class="algo-copy">
           <h2 class="algo-title">
-            Tysiące ofert.<br/>
-            <em>Jedna linia wartości.</em>
+            Zaawansowany,<br/>
+            autorski algorytm<br/>
+            <em>matematyczny.</em>
           </h2>
           <p class="algo-desc">
-            Algorytm zbiera wszystkie ogłoszenia danego modelu i wylicza realną
-            wartość dla każdego przebiegu. Każda kropka to jedno ogłoszenie.
-            Te pod krzywą to okazje, które MotoIQ wyłapuje za Ciebie.
+            Sercem MotoIQ jest nasz zaawansowany, autorski model statystyczny,
+            zbudowany od podstaw. Każde auto porównujemy z najbardziej podobnymi
+            egzemplarzami na rynku: ten sam wariant, zbliżony rocznik, przebieg
+            i moc, analizowane jednocześnie. Im bardziej podobne auto, tym większa
+            jego waga. Gdy podobnych aut jest za mało, stopniowo poszerzamy
+            porównanie, a gdy i to nie wystarcza, uczciwie mówimy, że nie wyceniamy.
+          </p>
+          <p class="algo-desc">
+            Każda kropka to jedno ogłoszenie, linia to wyliczona wartość rynkowa.
           </p>
 
           <div class="algo-stat">
-            <span class="algo-stat-num mono" id="algo-count" data-final="20000">0</span>
-            <span class="algo-stat-label label">ofert analizowanych dziennie</span>
+            <span class="algo-stat-num mono" id="algo-count" data-final="9800">0</span>
+            <span class="algo-stat-label label">aktywnych ofert aktualnie w bazie</span>
           </div>
 
           <ul class="algo-legend" aria-hidden="true">
             <li><span class="dot-key grey"></span> oferta</li>
-            <li><span class="dot-key deal"></span> okazja (pod krzywą)</li>
-            <li><span class="dot-key line"></span> wartość godziwa</li>
+            <li><span class="dot-key line"></span> wartość rynkowa</li>
           </ul>
         </div>
 
@@ -189,19 +241,19 @@ import '../styles/landing.css';
 
             <circle class="algo-dot grey" cx="112" cy="92"  r="4"/>
             <circle class="algo-dot grey" cx="150" cy="122" r="4"/>
-            <circle class="algo-dot deal" cx="182" cy="158" r="4.5"/>
+            <circle class="algo-dot grey" cx="182" cy="158" r="4"/>
             <circle class="algo-dot grey" cx="236" cy="150" r="4"/>
             <circle class="algo-dot grey" cx="290" cy="176" r="4"/>
-            <circle class="algo-dot deal" cx="322" cy="205" r="4.5"/>
+            <circle class="algo-dot grey" cx="322" cy="205" r="4"/>
             <circle class="algo-dot grey" cx="360" cy="200" r="4"/>
             <circle class="algo-dot grey" cx="410" cy="222" r="4"/>
-            <circle class="algo-dot hot"  cx="440" cy="252" r="6"/>
+            <circle class="algo-dot grey" cx="440" cy="252" r="4"/>
             <circle class="algo-dot grey" cx="486" cy="243" r="4"/>
             <circle class="algo-dot grey" cx="536" cy="258" r="4"/>
-            <circle class="algo-dot deal" cx="584" cy="284" r="4.5"/>
+            <circle class="algo-dot grey" cx="584" cy="284" r="4"/>
             <circle class="algo-dot grey" cx="636" cy="278" r="4"/>
 
-            <!-- Slabe oferty: szare kropki nad linia (przewartosciowane) -->
+            <!-- Oferty nad linia wartosci -->
             <circle class="algo-dot grey" cx="210" cy="118" r="4"/>
             <circle class="algo-dot grey" cx="350" cy="172" r="4"/>
             <circle class="algo-dot grey" cx="470" cy="212" r="4"/>
@@ -220,7 +272,7 @@ import '../styles/landing.css';
     <section class="brands">
       <div class="brands-meta label">
         <span>/ 04</span>
-        <span>MARKI W BAZIE</span>
+        <span>MARKI</span>
         <span class="hero-meta-line" aria-hidden="true"></span>
       </div>
 
@@ -232,14 +284,14 @@ import '../styles/landing.css';
           </h2>
 
           <p class="brands-desc">
-            Na start obejmujemy 10 kluczowych marek, które stanowią
+            Docelowo obejmiemy 10 kluczowych marek, które stanowią
             największą część obrotu samochodami używanymi w Polsce.
-            Docelowo zamierzamy zintegrować wszystkie najpopularniejsze marki na świecie.
-            To użytkownicy będą wybierać, która marka ma się pojawić jako następna.
+            Na start działamy na dwóch: Volkswagenie i Audi.
+            To użytkownicy będą wybierać, która marka dołączy jako następna.
           </p>
         </div>
 
-        <ul class="brands-name-list" aria-label="Marki w bazie MotoIQ">
+        <ul class="brands-name-list" aria-label="Marki docelowo w MotoIQ">
           <li class="brand-name-tag">Volkswagen</li>
           <li class="brand-name-tag">Audi</li>
           <li class="brand-name-tag">Ford</li>
@@ -296,8 +348,9 @@ import '../styles/landing.css';
           </h2>
           <p class="wycena-desc">
             Masz konkretny model na oku? Wpisujesz markę, rocznik i przebieg.
-            Wycena sprawdza realne ceny transakcyjne na rynku i mówi Ci
-            jedną liczbę: ile to auto powinno kosztować.
+            Policzyliśmy realne średnie rynkowe z tysięcy prawdziwych cen
+            z ogłoszeń, więc dostajesz jedną liczbę: ile ten model faktycznie
+            jest wart.
           </p>
           <p class="wycena-desc">
             Kupujesz, wiesz czy nie przepłacasz. Sprzedajesz, wiesz jaką cenę
@@ -367,7 +420,7 @@ import '../styles/landing.css';
             <li><span class="cta-bullet-dot" aria-hidden="true"></span> Dostęp w dniu startu, bez czekania w kolejce</li>
             <li><span class="cta-bullet-dot" aria-hidden="true"></span> Wczesne ceny promocyjne dla pierwszych użytkowników</li>
             <li><span class="cta-bullet-dot" aria-hidden="true"></span> Jeden mail kiedy produkt będzie gotowy, bez spamu</li>
-            <li><span class="cta-bullet-dot" aria-hidden="true"></span> Bezpośredni kontatkt z Founderem;)</li>
+            <li><span class="cta-bullet-dot" aria-hidden="true"></span> Bezpośredni kontakt z Founderem;)</li>
           </ul>
         </div>
 

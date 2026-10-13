@@ -10,9 +10,9 @@ interface Props {
 const {
   title = 'MotoIQ',
   // Długi opis: meta description (SEO), pełne zdanie z Wyceną.
-  description = 'MotoIQ przeszukuje Otomoto i sprzedajemy.pl, ocenia każde ogłoszenie i zwraca tylko te warte uwagi. Sprawdź też realną wartość konkretnego auta w sekundę dzięki Wycenie.',
+  description = 'MotoIQ zbiera ogłoszenia z Otomoto i sprzedajemy.pl w jednym miejscu, robi wstępną weryfikację każdej oferty i układa je od najbezpieczniejszej. Sprawdź też realną wartość rynkową konkretnego modelu dzięki Wycenie.',
   // Krótki opis: og/twitter (karta). Mieści się w całości na podglądzie linku.
-  ogDescription = 'MotoIQ przeszukuje Otomoto i sprzedajemy.pl, ocenia każde ogłoszenie i zwraca tylko te warte uwagi.',
+  ogDescription = 'Ogłoszenia z wielu portali w jednym miejscu, wstępnie sprawdzone i ułożone od najbezpieczniejszej oferty.',
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://motoiq.eu').toString();
@@ -30,7 +30,7 @@ const jsonLd = {
       url: `${siteURL}/`,
       email: 'swiecicki.luka@gmail.com',
       description:
-        'MotoIQ przeszukuje Otomoto i sprzedajemy.pl, ocenia każde ogłoszenie i zwraca tylko te warte uwagi. Oferuje też Wycenę, która na podstawie realnych cen transakcyjnych mówi ile dane auto powinno kosztować.',
+        'MotoIQ zbiera ogłoszenia z Otomoto i sprzedajemy.pl w jednym miejscu, robi wstępną weryfikację każdej oferty i układa je od najbezpieczniejszej. Oferuje też Wycenę, która na podstawie prawdziwych cen z ogłoszeń mówi, ile dany model jest realnie wart.',
       image: ogImageURL,
       foundingDate: '2025',
       address: {
@@ -46,7 +46,7 @@ const jsonLd = {
       url: `${siteURL}/`,
       name: 'MotoIQ',
       description:
-        'Automatyczne przeszukiwanie Otomoto i sprzedajemy.pl oraz wycena samochodów używanych w oparciu o realne ceny rynkowe.',
+        'Ogłoszenia samochodów używanych z Otomoto i sprzedajemy.pl w jednym miejscu, wstępnie zweryfikowane i ułożone od najbezpieczniejszej, oraz wycena oparta na prawdziwych cenach z ogłoszeń.',
       publisher: { '@id': `${siteURL}/#organization` },
       inLanguage: 'pl-PL',
     },
@@ -59,13 +59,13 @@ const jsonLd = {
       operatingSystem: 'Web',
       inLanguage: 'pl-PL',
       description:
-        'MotoIQ non stop monitoruje ogłoszenia samochodów używanych na Otomoto i sprzedajemy.pl, ocenia je autorskim algorytmem pod kątem realnej opłacalności i powiadamia o najlepszych okazjach. Funkcja Wyceny podaje realny zakres cen dla konkretnej marki, rocznika i przebiegu.',
+        'MotoIQ zbiera ogłoszenia samochodów używanych z Otomoto i sprzedajemy.pl w jednym miejscu, robi wstępną weryfikację każdej oferty (czerwone flagi, podejrzane dane, kompletność informacji) i układa je od najbezpieczniejszej do najsłabszej. Wartość rynkową liczy zaawansowany, autorski algorytm statystyczny.',
       featureList: [
-        'Ciągłe monitorowanie ogłoszeń na Otomoto i sprzedajemy.pl',
-        'Ocena opłacalności ogłoszeń autorskim algorytmem',
-        'Powiadomienia o nowych okazjach w czasie rzeczywistym',
-        'Filtry po marce, modelu, budżecie i lokalizacji',
-        'Wycena samochodu na podstawie realnych cen transakcyjnych',
+        'Ogłoszenia z wielu portali w jednym miejscu',
+        'Wstępna weryfikacja każdej oferty: czerwone flagi, podejrzane dane, kompletność informacji',
+        'Lista ofert ułożona od najbezpieczniejszej do najsłabszej',
+        'Wartość rynkowa liczona zaawansowanym, autorskim algorytmem statystycznym',
+        'Filtry po marce, modelu, nadwoziu, roczniku, przebiegu i cenie',
       ],
       publisher: { '@id': `${siteURL}/#organization` },
     },
