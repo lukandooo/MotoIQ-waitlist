@@ -4,17 +4,22 @@ import { createClient } from '@supabase/supabase-js';
 export const prerender = false;
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+// Źródło zapisu do kolumny waitlist.source (domyślnie 'landing'). Etykieta
+// przychodzi z adresu strony (?src=), więc tylko krótkie [a-z0-9_]; wszystko
+// inne to zwykły zapis z landingu.
+const SOURCE_RE = /^[a-z0-9_]{1,40}$/;
 
 export const POST: APIRoute = async ({ request, locals }) => {
   try {
     const body = await request.json().catch(() => null);
     if (!body) return json({ error: 'Nieprawidłowe dane.' }, 400);
 
-    const { name, email, phone, company } = body as {
+    const { name, email, phone, company, src } = body as {
       name?: string;
       email?: string;
       phone?: string;
       company?: string;
+      src?: string | null;
     };
 
     // Honeypot. Bots fill this. Pretend success.
@@ -25,6 +30,8 @@ export const POST: APIRoute = async ({ request, locals }) => {
     const cleanName = (name || '').trim().slice(0, 80);
     const cleanEmail = (email || '').trim().toLowerCase().slice(0, 200);
     const cleanPhone = (phone || '').trim().slice(0, 30);
+    const rawSource = typeof src === 'string' ? src.trim().toLowerCase() : '';
+    const cleanSource = SOURCE_RE.test(rawSource) ? rawSource : 'landing';
 
     if (!cleanName) return json({ error: 'Podaj imię.' }, 400);
     if (!EMAIL_RE.test(cleanEmail)) return json({ error: 'Niepoprawny email.' }, 400);
@@ -49,6 +56,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
         name: cleanName,
         email: cleanEmail,
         phone: cleanPhone || null,
+        source: cleanSource,
       });
 
     if (error) {

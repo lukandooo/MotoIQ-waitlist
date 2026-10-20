@@ -1,0 +1,160 @@
+---
+import Base from '../layouts/Base.astro';
+import '../styles/landing.css';
+
+// Nieistniejący adres. Adapter Cloudflare renderuje tę stronę w workerze dla
+// każdej ścieżki bez trasy i oddaje ją z kodem 404 (nie 200), więc wyszukiwarki
+// nie indeksują martwych adresów jako kopii strony głównej.
+---
+
+<Base title="Nie ma takiej strony · MotoIQ" noindex>
+  <main class="page">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="MotoIQ, strona główna">
+        <span class="brand-name">MotoIQ</span>
+      </a>
+      <div class="status mono">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>WCZESNY DOSTĘP · PL</span>
+      </div>
+    </header>
+
+    <section class="nf">
+      <div class="nf-meta label">
+        <span>/ 404</span>
+        <span>STRONA NIE ISTNIEJE</span>
+        <span class="nf-meta-line" aria-hidden="true"></span>
+      </div>
+
+      <h1 class="nf-title">Tej strony <em>nie ma</em></h1>
+      <p class="nf-lede">
+        Adres może być niepełny albo strona została przeniesiona.
+        Wróć na stronę główną albo zapisz się na listę oczekujących,
+        a damy znać, gdy MotoIQ ruszy.
+      </p>
+
+      <div class="nf-actions">
+        <a class="nf-btn nf-btn--primary" href="/#zapis">
+          <span>Zapisz się na listę oczekujących</span>
+          <span class="nf-arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="nf-btn" href="/">
+          <span>Strona główna</span>
+          <span class="nf-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="footnote mono">
+      <span>MotoIQ v0.1</span>
+      <span>·</span>
+      <span>gdańsk · pl</span>
+    </div>
+  </main>
+</Base>
+
+<style>
+  /* Język hero z landingu (etykieta mono z linią, nagłówek 800 z akcentem
+     w <em>), tylko krócej. Przyciski z rodziny .submit: obrys akcentem,
+     mono uppercase; główny dostaje tło --accent-dim na stałe. */
+  .nf {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-5);
+    padding: var(--space-9) 0 var(--space-8);
+    max-width: 720px;
+  }
+
+  .nf-meta {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .nf-meta-line {
+    flex: 1;
+    min-width: 40px;
+    height: 1px;
+    background: linear-gradient(to right, var(--border-strong), transparent);
+  }
+
+  .nf-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(40px, 6.5vw, 72px);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+  }
+
+  .nf-title em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--accent);
+  }
+
+  .nf-lede {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--text-dim);
+    max-width: 46ch;
+  }
+
+  .nf-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-3);
+  }
+
+  .nf-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-5);
+    min-height: 52px;
+    padding: 14px 22px;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    transition: color var(--dur-fast) var(--ease-out),
+                border-color var(--dur-fast) var(--ease-out),
+                background var(--dur-fast) var(--ease-out),
+                box-shadow var(--dur-base) var(--ease-out);
+  }
+
+  .nf-btn:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .nf-btn--primary {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: var(--accent-dim);
+  }
+
+  .nf-btn--primary:hover {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .nf-arrow {
+    font-size: 16px;
+    transition: transform var(--dur-fast) var(--ease-out);
+  }
+
+  .nf-btn:hover .nf-arrow { transform: translateX(4px); }
+
+  @media (max-width: 960px) {
+    .nf { padding: var(--space-8) 0 var(--space-7); }
+    .nf-actions { flex-direction: column; }
+    .nf-btn { width: 100%; }
+  }
+</style>

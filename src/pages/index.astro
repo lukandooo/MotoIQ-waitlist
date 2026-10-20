@@ -397,7 +397,7 @@ import '../styles/landing.css';
     </section>
 
     <!-- CTA section -->
-    <section class="cta">
+    <section class="cta" id="zapis">
       <div class="cta-meta label">
         <span>/ 06</span>
         <span>WCZESNY DOSTĘP</span>
@@ -575,6 +575,9 @@ import '../styles/landing.css';
         email: data.get('email'),
         phone: data.get('phone'),
         company: data.get('company'),
+        // Skąd przyszedł zapis (?src= w adresie, np. shared_offer z linku do
+        // oferty w app.motoiq.eu). Serwer przepuszcza tylko proste etykiety.
+        src: new URLSearchParams(location.search).get('src'),
       };
 
       const btn = form.querySelector('button[type=submit]');
