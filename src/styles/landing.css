@@ -152,7 +152,7 @@
   padding: 12px var(--space-5);
   background: var(--accent);
   /* ciemny tekst na akcencie: landing ma tylko ciemny motyw (--bg slate-950);
-     kontrast z --accent około 5,7:1, wyższy niż biały (około 3,7:1) */
+     kontrast z --accent 5,5:1 (na hoverze 7,9:1), biały dawałby 3,7:1 */
   color: var(--bg);
   border-radius: var(--radius);
   font-family: var(--font-display);
@@ -171,6 +171,9 @@
 }
 
 .hero-notify {
+  /* padding: cel dotyku co najmniej 24 px wysokości (WCAG 2.5.8) */
+  display: inline-block;
+  padding-block: 4px;
   font-size: 12px;
   letter-spacing: 0.06em;
   color: var(--text-dim);
