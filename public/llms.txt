@@ -2,7 +2,7 @@
 
 > MotoIQ zbiera ogłoszenia samochodów używanych z wielu portali (obecnie Otomoto i sprzedajemy.pl) w jednym miejscu, wczytuje wszystko, co się da o każdej ofercie, i robi jej wstępną weryfikację: wyłapuje czerwone flagi, podejrzane dane i braki informacji. Kupujący dostaje jedną listę ułożoną od najbezpieczniejszej oferty do najsłabszej, co drastycznie skraca czas szukania auta. Wartość rynkową ofert liczy zaawansowany, autorski algorytm statystyczny, oparty na prawdziwych cenach z ogłoszeń.
 
-MotoIQ to polski startup (Gdańsk) na wczesnym etapie. Produkt jest w fazie zapisów na wczesny dostęp. Pierwszy rynek to Polska, kolejne portale (m.in. Mobile.de, AutoScout24, Blocket, Finn.no) planowane w dalszej kolejności.
+MotoIQ to polski startup (Gdańsk) na wczesnym etapie. Lista ofert jest dostępna bez logowania pod adresem https://app.motoiq.eu; na landingu można zapisać się na powiadomienia o nowych funkcjach. Pierwszy rynek to Polska, kolejne portale (m.in. Mobile.de, AutoScout24, Blocket, Finn.no) planowane w dalszej kolejności.
 
 ## Co robi MotoIQ
 

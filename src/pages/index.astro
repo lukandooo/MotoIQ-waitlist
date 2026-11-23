@@ -49,6 +49,15 @@ import '../styles/landing.css';
           co nas zaniepokoiło przy każdej. Zamiast godzin przeglądania, kilka minut
           na oferty, które naprawdę warto sprawdzić.
         </p>
+        <!-- Start dostępu publicznego (27.11): lista ofert bez logowania.
+             Główny przycisk prowadzi do produktu, zapis na powiadomienia niżej (#zapis). -->
+        <div class="hero-actions">
+          <a class="hero-cta" href="https://app.motoiq.eu/">
+            <span>Zobacz oferty</span>
+            <span class="hero-cta-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="hero-notify mono" href="#zapis">Powiadom mnie o nowych funkcjach</a>
+        </div>
       </div>
     </section>
 
@@ -400,33 +409,34 @@ import '../styles/landing.css';
     <section class="cta" id="zapis">
       <div class="cta-meta label">
         <span>/ 06</span>
-        <span>WCZESNY DOSTĘP</span>
+        <span>POWIADOMIENIA</span>
         <span class="hero-meta-line" aria-hidden="true"></span>
       </div>
 
       <div class="cta-grid">
         <div class="cta-copy">
           <h2 class="cta-title">
-            Bądź pierwszy,<br/>
-            <em>kiedy ruszymy.</em>
+            Powiadom mnie,<br/>
+            <em>kiedy dodacie więcej.</em>
           </h2>
           <p class="cta-desc">
-            Jesteśmy na wczesnym etapie i to działa na Twoją korzyść. Pierwsi
-            użytkownicy dostają dostęp najszybciej i mają największy wpływ na to,
-            jak MotoIQ ostatecznie wygląda.
+            Lista ofert jest już otwarta dla wszystkich, bez zakładania konta.
+            Zostaw kontakt, a damy znać, gdy dojdą nowe funkcje i kolejne marki.
+            Pierwsze osoby na liście mają największy wpływ na to, jak MotoIQ
+            ostatecznie wygląda.
             <strong>Bez kart, bez zobowiązań, bez spamu.</strong>
           </p>
           <ul class="cta-bullets mono">
-            <li><span class="cta-bullet-dot" aria-hidden="true"></span> Dostęp w dniu startu, bez czekania w kolejce</li>
+            <li><span class="cta-bullet-dot" aria-hidden="true"></span> Informacja o nowych funkcjach, zanim ogłosimy je szerzej</li>
             <li><span class="cta-bullet-dot" aria-hidden="true"></span> Wczesne ceny promocyjne dla pierwszych użytkowników</li>
-            <li><span class="cta-bullet-dot" aria-hidden="true"></span> Jeden mail kiedy produkt będzie gotowy, bez spamu</li>
+            <li><span class="cta-bullet-dot" aria-hidden="true"></span> Jeden mail na ważną zmianę, bez spamu</li>
             <li><span class="cta-bullet-dot" aria-hidden="true"></span> Bezpośredni kontakt z Founderem;)</li>
           </ul>
         </div>
 
         <div class="instrument">
           <div class="instrument-head">
-            <span class="label">Zapisz się</span>
+            <span class="label">Powiadom mnie</span>
             <span class="mono ticks" aria-hidden="true">
               <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
             </span>
@@ -476,7 +486,7 @@ import '../styles/landing.css';
             </div>
 
             <button type="submit" class="submit">
-              <span class="submit-label">Zapisz się</span>
+              <span class="submit-label">Powiadom mnie</span>
               <span class="submit-arrow" aria-hidden="true">→</span>
             </button>
 
@@ -594,7 +604,7 @@ import '../styles/landing.css';
 
         if (!res.ok) throw new Error(json.error || 'Coś poszło nie tak.');
 
-        msg.textContent = '✓ Zapisano. Odezwiemy się jak będziemy gotowi.';
+        msg.textContent = '✓ Zapisano. Damy znać o nowych funkcjach.';
         msg.classList.add('msg-ok');
         form.reset();
       } catch (err) {
@@ -602,7 +612,7 @@ import '../styles/landing.css';
         msg.classList.add('msg-err');
       } finally {
         btn.disabled = false;
-        btn.querySelector('.submit-label').textContent = 'Zapisz się';
+        btn.querySelector('.submit-label').textContent = 'Powiadom mnie';
       }
     });
   </script>
