@@ -209,8 +209,11 @@ import '../styles/landing.css';
           </p>
 
           <div class="algo-stat">
-            <span class="algo-stat-num mono" id="algo-count" data-final="9800">0</span>
-            <span class="algo-stat-label label">aktywnych ofert aktualnie w bazie</span>
+            <!-- Liczba aktywnych ofert zaokrąglona W DÓŁ do pełnego tysiąca; ustalana przed wdrożeniem
+                 (aktywne, kanoniczne oferty śledzonych modeli, odczyt motoiq_ro). -->
+            <span class="algo-stat-label label">ponad</span>
+            <span class="algo-stat-num mono" id="algo-count" data-final="20000">0</span>
+            <span class="algo-stat-label label">aktywnych ofert w bazie</span>
           </div>
 
           <ul class="algo-legend" aria-hidden="true">
@@ -625,14 +628,14 @@ import '../styles/landing.css';
       const FINAL = parseInt(countEl.dataset.final, 10);
       const fmt = (n) => n.toLocaleString('pl-PL');
       function countUp() {
-        if (reduce) { countEl.textContent = fmt(FINAL) + '+'; return; }
+        if (reduce) { countEl.textContent = fmt(FINAL); return; }
         const dur = 1600, t0 = performance.now();
         function tick(now) {
           const p = Math.min((now - t0) / dur, 1);
           const e = 1 - Math.pow(1 - p, 3);
           countEl.textContent = fmt(Math.round(FINAL * e));
           if (p < 1) requestAnimationFrame(tick);
-          else countEl.textContent = fmt(FINAL) + '+';
+          else countEl.textContent = fmt(FINAL);
         }
         requestAnimationFrame(tick);
       }
