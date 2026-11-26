@@ -1,0 +1,235 @@
+---
+import Base from '../layouts/Base.astro';
+import '../styles/landing.css';
+
+// Polityka prywatności. Źródło tekstu: motoiq-programme,
+// docs/prawne/polityka-prywatnosci.md. Zmiana tekstu = zmiana w obu miejscach
+// w tym samym dniu. Kotwice: #zapis (formularz na tej stronie głównej),
+// #zgloszenia (link „Zgłoś ofertę” w aplikacji app.motoiq.eu).
+// Punkt o Google Fonts usunięty z sekcji 8: czcionki są serwowane z /fonts.
+---
+
+<Base
+  title="Polityka prywatności · MotoIQ"
+  description="Kto odpowiada za dane w MotoIQ, jakie dane zbieramy przy zapisie na powiadomienia i przeglądaniu ofert, jak długo je trzymamy i jakie masz prawa."
+  ogDescription="Polityka prywatności MotoIQ."
+>
+  <main class="page">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="MotoIQ, strona główna">
+        <span class="brand-name">MotoIQ</span>
+      </a>
+      <div class="status mono">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>WCZESNY DOSTĘP · PL</span>
+      </div>
+    </header>
+
+    <article class="pp">
+      <div class="pp-meta label">
+        <span>/ prywatność</span>
+        <span class="pp-meta-line" aria-hidden="true"></span>
+      </div>
+
+      <h1 class="pp-title">Polityka prywatności <em>MotoIQ</em></h1>
+      <p class="pp-date mono">Obowiązuje od 27 listopada 2026 r.</p>
+
+      <section id="administrator">
+        <h2>1. Kto odpowiada za dane</h2>
+        <p>Administratorem danych jest <strong>Łukasz Święcicki</strong>, osoba prywatna prowadząca serwis MotoIQ (<code>motoiq.eu</code> i <code>app.motoiq.eu</code>).</p>
+        <p>Kontakt we wszystkich sprawach z tej polityki: <a href="mailto:kontakt@motoiq.eu"><strong>kontakt@motoiq.eu</strong></a>.</p>
+      </section>
+
+      <section id="czym-jest">
+        <h2>2. Czym jest MotoIQ</h2>
+        <p>MotoIQ zbiera publiczne ogłoszenia sprzedaży aut z portali Otomoto i sprzedajemy.pl, ocenia je i pokazuje w jednym miejscu. MotoIQ nie jest sprzedawcą ani pośrednikiem. Szczegóły oferty i kontakt do sprzedawcy są w oryginalnym ogłoszeniu, do którego zawsze linkujemy.</p>
+      </section>
+
+      <section id="przegladanie">
+        <h2>3. Przeglądasz oferty</h2>
+        <ul>
+          <li>Nie zakładasz konta i nie podajesz żadnych danych.</li>
+          <li>Nie używamy ciasteczek ani narzędzi analitycznych i reklamowych. Przeglądarka zapamiętuje tylko wybrany motyw (jasny lub ciemny) i stan rozwinięcia filtrów. Te ustawienia zostają na Twoim urządzeniu i nie są do nas wysyłane.</li>
+          <li><strong>Logi serwera.</strong> Przy każdym wejściu serwer zapisuje adres IP, datę i godzinę, adres strony, kod odpowiedzi i nazwę przeglądarki. Używamy ich tylko do utrzymania serwisu, ochrony przed nadużyciami (limit zapytań z jednego adresu) i szukania błędów. Logi są usuwane automatycznie po 15 dniach. Podstawa: nasz prawnie uzasadniony interes, czyli bezpieczeństwo i działanie serwisu (art. 6 ust. 1 lit. f RODO).</li>
+          <li><strong>Zdjęcia ofert</strong> wczytują się bezpośrednio z serwerów portali (Otomoto, sprzedajemy.pl). Twoja przeglądarka łączy się wtedy z tymi serwerami, które widzą Twój adres IP i działają według własnych zasad prywatności.</li>
+        </ul>
+      </section>
+
+      <section id="zapis">
+        <h2>4. Zapisujesz się na powiadomienia (<code>motoiq.eu</code>)</h2>
+        <ul>
+          <li><strong>Co zbieramy:</strong> imię, adres e-mail, numer telefonu i informację, z której strony nastąpił zapis.</li>
+          <li><strong>Po co:</strong> żeby poinformować Cię o nowych funkcjach MotoIQ i o uruchomieniu płatnej wersji.</li>
+          <li><strong>Podstawa:</strong> Twoja zgoda wyrażona wysłaniem formularza (art. 6 ust. 1 lit. a RODO). Możesz ją wycofać w każdej chwili, pisząc na <a href="mailto:kontakt@motoiq.eu">kontakt@motoiq.eu</a>. Usuniemy wtedy Twoje dane z listy.</li>
+          <li><strong>Jak długo:</strong> do wycofania zgody albo zamknięcia listy, nie dłużej niż 2 lata od zapisu.</li>
+        </ul>
+      </section>
+
+      <section id="opinia">
+        <h2>5. Wysyłasz opinię</h2>
+        <p>Formularz opinii obsługuje <strong>Tally</strong> (Tally BV, Belgia). Nie musisz podawać danych osobowych. Jeśli zostawisz adres e-mail, użyjemy go tylko do odpowiedzi na Twoją opinię. Podstawa: Twoja zgoda (art. 6 ust. 1 lit. a RODO). Odpowiedzi przechowujemy najdłużej 12 miesięcy.</p>
+      </section>
+
+      <section id="sprzedawcy">
+        <h2>6. Jesteś sprzedawcą, którego ogłoszenie pokazujemy</h2>
+        <ul>
+          <li><strong>Skąd mamy dane:</strong> z publicznych ogłoszeń w portalach Otomoto i sprzedajemy.pl.</li>
+          <li><strong>Co pokazujemy:</strong> dane auta, cenę, miejscowość i region, zdjęcia (wczytywane z serwera portalu), typ konta sprzedawcy (prywatne lub firmowe) i liczbę ogłoszeń tego konta w naszej bazie, a także krótkie dosłowne cytaty z opisu wybrane automatycznie, z ukrytymi telefonami, adresami e-mail, numerami rejestracyjnymi i VIN. Osobom niezalogowanym nie pokazujemy opisu ogłoszenia.</li>
+          <li><strong>Czego nie pokazujemy:</strong> imienia i nazwiska, nazwy konta, numeru telefonu ani adresu e-mail.</li>
+          <li><strong>Ocena automatyczna (profilowanie):</strong> program ocenia ofertę na podstawie danych z ogłoszenia. Na podstawie liczby ogłoszeń konta prywatnego może też oznaczyć je jako prawdopodobnie prowadzone przez osobę handlującą autami. Ta ocena nie wywołuje wobec Ciebie skutków prawnych. Jej celem jest pomoc kupującym, bo od firmy przysługują im szersze prawa niż od osoby prywatnej.</li>
+          <li><strong>Analiza opisu przez AI:</strong> treść opisu analizuje model językowy Claude (Anthropic) za pośrednictwem OpenRouter, w trybie bez przechowywania danych. Przed wysłaniem usuwamy z opisu telefony, adresy e-mail, numery rejestracyjne i VIN. Obie firmy mają siedzibę w USA. Przekazanie odbywa się na podstawie <strong>[POTWIERDZIĆ: certyfikacji EU-US Data Privacy Framework albo standardowych klauzul umownych]</strong>.</li>
+          <li><strong>Podstawa:</strong> nasz prawnie uzasadniony interes, czyli pomoc kupującym w ocenie ofert z rynku publicznego (art. 6 ust. 1 lit. f RODO).</li>
+          <li><strong>Jak długo:</strong> ofertę pokazujemy, dopóki jest aktywna na portalu. Po wygaśnięciu ogłoszenia przestajemy je pokazywać publicznie, a dane trzymamy do analiz rynku (na przykład zmian cen) najdłużej 24 miesiące od wygaśnięcia.</li>
+        </ul>
+
+        <h3 id="zgloszenia">Zgłoszenia ofert</h3>
+        <p>Jeśli nie chcesz, żeby Twoje ogłoszenie było widoczne w MotoIQ, albo coś pokazujemy błędnie (ocenę, cytat, oznaczenie sprzedawcy, zdjęcie), napisz na <a href="mailto:zgloszenia@motoiq.eu"><strong>zgloszenia@motoiq.eu</strong></a> i podaj link do ogłoszenia albo do strony oferty w MotoIQ. Ukryjemy ofertę w ciągu 3 dni roboczych, zwykle szybciej, i potwierdzimy to mailowo. Przy sprzeciwie wobec przetwarzania danych (art. 21 RODO) usuniemy też dane tej oferty z naszej bazy, chyba że będziemy ich potrzebować do obrony przed roszczeniami. Korespondencję w sprawie zgłoszenia przechowujemy 3 lata, żeby móc wykazać, jak je załatwiliśmy.</p>
+      </section>
+
+      <section id="konta">
+        <h2>7. Konta zespołu</h2>
+        <p>Konta zakładamy ręcznie wyłącznie dla zespołu i osób testujących. Przechowujemy adres e-mail i hasło w postaci zaszyfrowanej (Supabase Auth). Po zalogowaniu przeglądarka dostaje ciasteczka sesji, bez których logowanie nie działa. Nie służą do śledzenia.</p>
+      </section>
+
+      <section id="odbiorcy">
+        <h2>8. Komu przekazujemy dane</h2>
+        <p>Nie sprzedajemy danych. Korzystamy z dostawców, którzy przetwarzają dane w naszym imieniu:</p>
+        <ul>
+          <li>Hetzner Online GmbH, Niemcy: serwer serwisu <code>app.motoiq.eu</code>;</li>
+          <li>Supabase: baza danych i logowanie zespołu, serwery we Frankfurcie;</li>
+          <li>Cloudflare: obsługa domeny, strony <code>motoiq.eu</code>, formularza zapisu i przekazywania poczty;</li>
+          <li>Tally BV, Belgia: formularz opinii;</li>
+          <li>OpenRouter i Anthropic, USA: analiza treści ogłoszeń, bez danych osób odwiedzających.</li>
+        </ul>
+      </section>
+
+      <section id="prawa">
+        <h2>9. Twoje prawa</h2>
+        <p>Masz prawo dostępu do swoich danych, ich sprostowania, usunięcia, ograniczenia przetwarzania i przeniesienia. Masz też prawo sprzeciwu wobec przetwarzania opartego na prawnie uzasadnionym interesie, w tym wobec profilowania. Zgodę możesz wycofać w każdej chwili, bez wpływu na wcześniejsze przetwarzanie. Odpowiadamy najpóźniej w ciągu miesiąca. Napisz na <a href="mailto:kontakt@motoiq.eu">kontakt@motoiq.eu</a>. Możesz też złożyć skargę do Prezesa Urzędu Ochrony Danych Osobowych (ul. Stawki 2, 00-193 Warszawa, <a href="https://uodo.gov.pl" rel="noopener">uodo.gov.pl</a>).</p>
+      </section>
+
+      <section id="zmiany">
+        <h2>10. Zmiany</h2>
+        <p>O zmianach poinformujemy na tej stronie, zmieniając datę na górze.</p>
+      </section>
+    </article>
+
+    <div class="footnote mono">
+      <span>MotoIQ v0.1</span>
+      <span>·</span>
+      <span>gdańsk · pl</span>
+      <span class="footnote-sep">·</span>
+      <a href="mailto:kontakt@motoiq.eu" class="footnote-email">kontakt@motoiq.eu</a>
+      <span class="footnote-sep">·</span>
+      <a href="/" class="footnote-email">strona główna</a>
+    </div>
+  </main>
+</Base>
+
+<style>
+  /* Język nagłówka z 404 (etykieta mono z linią, tytuł 800 z akcentem w <em>),
+     treść czytelna: kolumna do 720 px, tekst --text-dim, nagłówki --text. */
+  .pp {
+    max-width: 720px;
+    padding: var(--space-8) 0 var(--space-7);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .pp-meta {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .pp-meta-line {
+    flex: 1;
+    min-width: 40px;
+    height: 1px;
+    background: linear-gradient(to right, var(--border-strong), transparent);
+  }
+
+  .pp-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(34px, 5vw, 56px);
+    line-height: 1;
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+  }
+
+  .pp-title em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--accent);
+  }
+
+  .pp-date {
+    font-size: 12px;
+    color: var(--text-mute);
+    margin-top: calc(-1 * var(--space-4));
+  }
+
+  .pp section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    scroll-margin-top: var(--space-6);
+  }
+
+  .pp h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: var(--tracking-tight);
+    color: var(--text);
+  }
+
+  .pp h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--text);
+    margin-top: var(--space-3);
+    scroll-margin-top: var(--space-6);
+  }
+
+  .pp p,
+  .pp li {
+    color: var(--text-dim);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .pp ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding-left: 1.2em;
+    list-style: disc;
+  }
+
+  .pp strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .pp a {
+    color: var(--accent-soft);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .pp a:hover { color: var(--accent); }
+
+  .pp code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    color: var(--text);
+  }
+
+  .pp h3:target {
+    color: var(--accent);
+  }
+</style>
