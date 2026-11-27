@@ -1411,3 +1411,13 @@
   .field input,
   .field select { font-size: 16px; }
 }
+/* ── Informacja o administratorze pod formularzem (art. 13 RODO) ── */
+.legal-admin a {
+  color: var(--text-dim);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.legal-admin a:hover {
+  color: var(--accent);
+}

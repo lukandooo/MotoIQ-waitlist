@@ -31,7 +31,7 @@ const jsonLd = {
       '@id': `${siteURL}/#organization`,
       name: 'MotoIQ',
       url: `${siteURL}/`,
-      email: 'swiecicki.luka@gmail.com',
+      email: 'kontakt@motoiq.eu',
       description:
         'MotoIQ zbiera ogłoszenia z Otomoto i sprzedajemy.pl w jednym miejscu, robi wstępną weryfikację każdej oferty i układa je od najbezpieczniejszej. Oferuje też Wycenę, która na podstawie prawdziwych cen z ogłoszeń mówi, ile dany model jest realnie wart.',
       image: ogImageURL,
@@ -106,18 +106,12 @@ const jsonLd = {
     <meta name="theme-color" content="#020617" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Czcionki z /fonts (global.css), bez Google Fonts: polityka prywatności, sekcja 8. -->
+    <link rel="preload" href="/fonts/archivo-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
 
     <title>{title}</title>
 
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-
-    <script src="https://analytics.ahrefs.com/analytics.js" data-key="jNfvx3qUWFvmpCcGS1AmSQ" async></script>
 
   </head>
   <body>
