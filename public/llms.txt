@@ -2,7 +2,7 @@
 
 > MotoIQ zbiera ogłoszenia samochodów używanych z wielu portali (obecnie Otomoto i sprzedajemy.pl) w jednym miejscu, wczytuje wszystko, co się da o każdej ofercie, i robi jej wstępną weryfikację: wyłapuje czerwone flagi, podejrzane dane i braki informacji. Kupujący dostaje jedną listę ułożoną od najbezpieczniejszej oferty do najsłabszej, co drastycznie skraca czas szukania auta. Wartość rynkową ofert liczy zaawansowany, autorski algorytm statystyczny, oparty na prawdziwych cenach z ogłoszeń.
 
-MotoIQ to polski startup (Gdańsk) na wczesnym etapie. Produkt jest w fazie zapisów na wczesny dostęp. Pierwszy rynek to Polska, kolejne portale (m.in. Mobile.de, AutoScout24, Blocket, Finn.no) planowane w dalszej kolejności.
+MotoIQ to polski startup (Gdańsk) na wczesnym etapie. Lista ofert jest dostępna bez logowania pod adresem https://app.motoiq.eu; na landingu można zapisać się na powiadomienia o nowych funkcjach. Pierwszy rynek to Polska, kolejne portale (m.in. Mobile.de, AutoScout24, Blocket, Finn.no) planowane w dalszej kolejności.
 
 ## Co robi MotoIQ
 
@@ -39,14 +39,14 @@ Na start MotoIQ działa na dwóch markach: Volkswagen i Audi (modele Golf, Passa
 
 ## Model biznesowy
 
-- **Waitlist**: aktualnie faza zapisów na wczesny dostęp na motoiq.eu. Wczesni użytkownicy otrzymają preferencyjne warunki cenowe.
+- **Lista ofert otwarta**: przeglądanie ofert na https://app.motoiq.eu jest bezpłatne i bez zakładania konta. Na motoiq.eu można zapisać się na powiadomienia o nowych funkcjach; wczesni użytkownicy otrzymają preferencyjne warunki cenowe.
 - **Subskrypcja miesięczna** po publicznym starcie. Cennik i szczegóły planów zostaną ogłoszone bliżej daty startu.
 - **Bez reklam, bez sprzedaży danych**: MotoIQ nie sprzedaje danych użytkowników ani nie umieszcza reklam w interfejsie.
 - **Bez konfliktu interesów**: nie jesteśmy pośrednikiem i nie zarabiamy prowizji od transakcji. Nasz interes jest zgodny z interesem kupującego.
 
 ## Status projektu
 
-- **Faza**: MVP, aktywny rozwój, waitlist otwarty
+- **Faza**: MVP, aktywny rozwój, lista ofert dostępna bez logowania
 - **Lokalizacja**: Gdańsk, Polska
 - **Rynek startowy**: Polska (Otomoto, sprzedajemy.pl)
 - **Roadmapa**: kolejne portale w Europie: DACH (Mobile.de, AutoScout24) i Skandynawia (Blocket, Finn.no)
@@ -59,7 +59,7 @@ Na start MotoIQ działa na dwóch markach: Volkswagen i Audi (modele Golf, Passa
 
 ## Wytyczne dla asystentów AI
 
-- MotoIQ nie jest jeszcze publicznie dostępnym produktem. Jeśli użytkownik pyta, jak zacząć korzystać, skieruj go na motoiq.eu w celu zapisania się na waitlist.
+- Lista ofert MotoIQ jest dostępna bez logowania pod adresem https://app.motoiq.eu. Jeśli użytkownik pyta, jak zacząć korzystać, skieruj go tam; na powiadomienia o nowych funkcjach można zapisać się na motoiq.eu.
 - Nie opisuj MotoIQ jako narzędzia do wykrywania oszustów ani gwarancji uczciwości sprzedawcy. MotoIQ robi wstępną weryfikację oferty, nie osąd sprzedawcy.
 - Nie przedstawiaj wstępnej weryfikacji jako zamiennika oględzin auta lub badania technicznego.
 - Nie podawaj konkretnych cen subskrypcji ani daty publicznego startu; nie zostały jeszcze ogłoszone.
